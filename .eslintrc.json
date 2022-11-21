@@ -1,0 +1,13 @@
+{
+  "env": {
+    "es2022": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": "standard-with-typescript",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  }
+}
