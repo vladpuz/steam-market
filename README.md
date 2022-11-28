@@ -74,7 +74,7 @@ main()
 | [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interaction with the steam community      | DoctorMcKay       |
 | [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Steam trade offer management              | DoctorMcKay       |
 | [steam-market](https://github.com/vladislav-puzyrev/steam-market) (YOU HERE)             | Steam community market API client         | Vladislav Puzyrev |
-| [steam-bot](https://github.com/vladislav-puzyrev/steam-bot)                              | Creating steam bots based on middlewares  | Vladislav Puzyrev |
+| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot)                          | Creating steam bots based on middlewares  | Vladislav Puzyrev |
 
 # API
 

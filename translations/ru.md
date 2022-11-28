@@ -76,4 +76,4 @@ main()
 | [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Взаимодействие с сообществом steam         | DoctorMcKay       |
 | [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Управление предложениями обмена steam      | DoctorMcKay       |
 | [steam-market](https://github.com/vladislav-puzyrev/steam-market) (ВЫ ЗДЕСЬ)             | Клиент API торговой площадки steam         | Vladislav Puzyrev |
-| [steam-bot](https://github.com/vladislav-puzyrev/steam-bot)                              | Создание steam ботов на основе middlewares | Vladislav Puzyrev |
+| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot)                          | Создание steam ботов на основе middlewares | Vladislav Puzyrev |
