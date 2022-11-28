@@ -1,7 +1,6 @@
 # steam-market
 
-Steam community market API client. Designed to be shared with
-[steam-user](https://github.com/DoctorMcKay/node-steam-user).
+Steam community market API client. Designed for use with [steam-user](https://github.com/DoctorMcKay/node-steam-user ).
 
 This package is intended for educational purposes only. Use it at your own risk, automation on
 the community market is prohibited by the rules of the steam subscriber agreement.
@@ -68,13 +67,14 @@ main()
 
 ## See also
 
-| Modules                                                                                  | Description                          | Author            |
-|------------------------------------------------------------------------------------------|--------------------------------------|-------------------|
-| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                             | Generating TOTP auth codes for steam | DoctorMcKay       |
-| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                             | Interaction with the steam network   | DoctorMcKay       |
-| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interaction with the steam community | DoctorMcKay       |
-| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Steam trade offer management         | DoctorMcKay       |
-| [steam-market](https://github.com/vladislav-puzyrev/steam-market) (YOU HERE)             | Steam community market API client    | Vladislav Puzyrev |
+| Modules                                                                                  | Description                               | Author            |
+|------------------------------------------------------------------------------------------|-------------------------------------------|-------------------|
+| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                             | Generating TOTP auth codes for steam      | DoctorMcKay       |
+| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                             | Interaction with the steam network        | DoctorMcKay       |
+| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interaction with the steam community      | DoctorMcKay       |
+| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Steam trade offer management              | DoctorMcKay       |
+| [steam-market](https://github.com/vladislav-puzyrev/steam-market) (YOU HERE)             | Steam community market API client         | Vladislav Puzyrev |
+| [steam-bot](https://github.com/vladislav-puzyrev/steam-bot)                              | Creating steam bots based on middlewares  | Vladislav Puzyrev |
 
 # API
 

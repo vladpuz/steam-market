@@ -1,7 +1,7 @@
 # steam-market
 
-Клиент API торговой площадки steam. Спроектирован для совместного использования со
-[steam-user](https://github.com/DoctorMcKay/node-steam-user).
+Клиент API торговой площадки steam. Спроектирован для использования
+со [steam-user](https://github.com/DoctorMcKay/node-steam-user).
 
 Этот пакет предназначен только для образовательных целей. Используйте его на свой страх и риск, автоматизация на
 торговой площадке запрещена правилами соглашения подписчика steam.
@@ -76,3 +76,4 @@ main()
 | [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Взаимодействие с сообществом steam         | DoctorMcKay       |
 | [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Управление предложениями обмена steam      | DoctorMcKay       |
 | [steam-market](https://github.com/vladislav-puzyrev/steam-market) (ВЫ ЗДЕСЬ)             | Клиент API торговой площадки steam         | Vladislav Puzyrev |
+| [steam-bot](https://github.com/vladislav-puzyrev/steam-bot)                              | Создание steam ботов на основе middlewares | Vladislav Puzyrev |
