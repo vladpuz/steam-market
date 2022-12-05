@@ -67,14 +67,14 @@ main()
 
 ## See also
 
-| Modules                                                                                  | Description                               | Author            |
-|------------------------------------------------------------------------------------------|-------------------------------------------|-------------------|
-| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                             | Generating TOTP auth codes for steam      | DoctorMcKay       |
-| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                             | Interaction with the steam network        | DoctorMcKay       |
-| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interaction with the steam community      | DoctorMcKay       |
-| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Steam trade offer management              | DoctorMcKay       |
-| [steam-market](https://github.com/vladislav-puzyrev/steam-market) (YOU HERE)             | Steam community market API client         | Vladislav Puzyrev |
-| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot)                          | Creating steam bots based on middlewares  | Vladislav Puzyrev |
+| Modules                                                                                  | Description                              | Author            |
+|------------------------------------------------------------------------------------------|------------------------------------------|-------------------|
+| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                             | Generating TOTP auth codes for steam     | DoctorMcKay       |
+| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                             | Interaction with the steam network       | DoctorMcKay       |
+| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interaction with the steam community     | DoctorMcKay       |
+| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Steam trade offer management             | DoctorMcKay       |
+| [steam-market](https://github.com/vladislav-puzyrev/steam-market) (YOU HERE)             | Steam community market API client        | Vladislav Puzyrev |
+| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot)                          | Creating steam bots based on middlewares | Vladislav Puzyrev |
 
 # API
 
@@ -161,13 +161,13 @@ main()
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | ``null`` \| [`MarketOptions`](#interfacesmarketoptionsmd) |
+| Name       | Type       |
+|:-----------|:-----------|
+| `options?` | ``null`` \ | [`MarketOptions`](#interfacesmarketoptionsmd) |
 
 #### Defined in
 
-SteamMarket.ts:43
+[SteamMarket.ts:43](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L43)
 
 ## Properties
 
@@ -177,7 +177,7 @@ SteamMarket.ts:43
 
 #### Defined in
 
-SteamMarket.ts:39
+[SteamMarket.ts:39](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L39)
 
 ___
 
@@ -187,7 +187,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:36
+[SteamMarket.ts:36](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L36)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:37
+[SteamMarket.ts:37](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L37)
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:40
+[SteamMarket.ts:40](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L40)
 
 ___
 
@@ -217,7 +217,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:34
+[SteamMarket.ts:34](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L34)
 
 ___
 
@@ -227,7 +227,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:35
+[SteamMarket.ts:35](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L35)
 
 ___
 
@@ -237,7 +237,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:38
+[SteamMarket.ts:38](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L38)
 
 ___
 
@@ -247,22 +247,22 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:41
+[SteamMarket.ts:41](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L41)
 
 ## Methods
 
 ### buyOrderStatus
 
-▸ **buyOrderStatus**(`appId`, `marketHashName`
-, `buyOrderId`): `Promise`<[`BuyOrderStatusResult`](#interfacesbuyorderstatusresultmd)\>
+▸ **buyOrderStatus
+**(`appId`, `marketHashName`, `buyOrderId`): `Promise`<[`BuyOrderStatusResult`](#interfacesbuyorderstatusresultmd)\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
+| Name             | Type     |
+|:-----------------|:---------|
+| `appId`          | `number` |
 | `marketHashName` | `number` |
-| `buyOrderId` | `number` |
+| `buyOrderId`     | `number` |
 
 #### Returns
 
@@ -270,7 +270,7 @@ SteamMarket.ts:41
 
 #### Defined in
 
-SteamMarket.ts:441
+[SteamMarket.ts:441](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L441)
 
 ___
 
@@ -280,8 +280,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name         | Type     |
+|:-------------|:---------|
 | `buyOrderId` | `number` |
 
 #### Returns
@@ -290,7 +290,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:520
+[SteamMarket.ts:520](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L520)
 
 ___
 
@@ -300,8 +300,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type     |
+|:------------|:---------|
 | `listingId` | `number` |
 
 #### Returns
@@ -310,7 +310,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:537
+[SteamMarket.ts:537](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L537)
 
 ___
 
@@ -320,9 +320,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
+| Name      | Type                                                          |
+|:----------|:--------------------------------------------------------------|
+| `appId`   | `number`                                                      |
 | `options` | [`CreateBuyOrderOptions`](#interfacescreatebuyorderoptionsmd) |
 
 #### Returns
@@ -331,7 +331,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:467
+[SteamMarket.ts:467](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L467)
 
 ___
 
@@ -341,9 +341,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
+| Name      | Type                                                            |
+|:----------|:----------------------------------------------------------------|
+| `appId`   | `number`                                                        |
 | `options` | [`CreateSellOrderOptions`](#interfacescreatesellorderoptionsmd) |
 
 #### Returns
@@ -352,7 +352,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:493
+[SteamMarket.ts:493](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L493)
 
 ___
 
@@ -366,7 +366,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:103
+[SteamMarket.ts:103](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L103)
 
 ___
 
@@ -380,7 +380,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:123
+[SteamMarket.ts:123](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L123)
 
 ___
 
@@ -394,7 +394,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:111
+[SteamMarket.ts:111](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L111)
 
 ___
 
@@ -408,7 +408,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:115
+[SteamMarket.ts:115](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L115)
 
 ___
 
@@ -422,7 +422,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:127
+[SteamMarket.ts:127](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L127)
 
 ___
 
@@ -436,7 +436,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:107
+[SteamMarket.ts:107](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L107)
 
 ___
 
@@ -450,7 +450,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:119
+[SteamMarket.ts:119](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L119)
 
 ___
 
@@ -464,7 +464,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:131
+[SteamMarket.ts:131](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L131)
 
 ___
 
@@ -474,9 +474,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
+| Name             | Type     |
+|:-----------------|:---------|
+| `appId`          | `number` |
 | `marketHashName` | `string` |
 
 #### Returns
@@ -485,22 +485,22 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:243
+[SteamMarket.ts:243](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L243)
 
 ___
 
 ### itemOrdersHistogram
 
-▸ **itemOrdersHistogram**(`appId`, `marketHashName`
-, `itemNameId`): `Promise`<[`ItemOrdersHistogramResult`](#interfacesitemordershistogramresultmd)\>
+▸ **itemOrdersHistogram
+**(`appId`, `marketHashName`, `itemNameId`): `Promise`<[`ItemOrdersHistogramResult`](#interfacesitemordershistogramresultmd)\>
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
+| Name             | Type     |
+|:-----------------|:---------|
+| `appId`          | `number` |
 | `marketHashName` | `string` |
-| `itemNameId` | `number` |
+| `itemNameId`     | `number` |
 
 #### Returns
 
@@ -508,7 +508,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:197
+[SteamMarket.ts:197](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L197)
 
 ___
 
@@ -518,10 +518,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `start?` | ``null`` \| `number` |
-| `count?` | ``null`` \| `number` |
+| Name     | Type       |
+|:---------|:-----------|
+| `start?` | ``null`` \ | `number` |
+| `count?` | ``null`` \ | `number` |
 
 #### Returns
 
@@ -529,7 +529,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:313
+[SteamMarket.ts:313](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L313)
 
 ___
 
@@ -539,9 +539,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
+| Name             | Type     |
+|:-----------------|:---------|
+| `appId`          | `number` |
 | `marketHashName` | `string` |
 
 #### Returns
@@ -550,7 +550,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:286
+[SteamMarket.ts:286](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L286)
 
 ___
 
@@ -560,9 +560,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
+| Name             | Type     |
+|:-----------------|:---------|
+| `appId`          | `number` |
 | `marketHashName` | `string` |
 
 #### Returns
@@ -571,7 +571,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:264
+[SteamMarket.ts:264](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L264)
 
 ___
 
@@ -581,10 +581,10 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `appId` | `number` |
-| `options?` | ``null`` \| [`SearchOptions`](#interfacessearchoptionsmd) |
+| Name       | Type       |
+|:-----------|:-----------|
+| `appId`    | `number`   |
+| `options?` | ``null`` \ | [`SearchOptions`](#interfacessearchoptionsmd) |
 
 #### Returns
 
@@ -592,7 +592,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:135
+[SteamMarket.ts:135](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L135)
 
 ___
 
@@ -602,8 +602,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type       |
+|:----------|:-----------|
 | `cookies` | `string`[] |
 
 #### Returns
@@ -612,7 +612,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:65
+[SteamMarket.ts:65](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L65)
 
 ___
 
@@ -622,8 +622,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+|:----------|:---------|
 | `country` | `string` |
 
 #### Returns
@@ -632,7 +632,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:88
+[SteamMarket.ts:88](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L88)
 
 ___
 
@@ -642,8 +642,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                     |
+|:-----------|:-----------------------------------------|
 | `currency` | [`ECurrencyCode`](#enumsecurrencycodemd) |
 
 #### Returns
@@ -652,7 +652,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:76
+[SteamMarket.ts:76](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L76)
 
 ___
 
@@ -662,8 +662,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type     |
+|:------------|:---------|
 | `vanityURL` | `string` |
 
 #### Returns
@@ -672,7 +672,7 @@ ___
 
 #### Defined in
 
-SteamMarket.ts:99
+[SteamMarket.ts:99](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/SteamMarket.ts#L99)
 
 # Interface: Action
 
@@ -691,7 +691,7 @@ SteamMarket.ts:99
 
 #### Defined in
 
-types/Action.ts:2
+[types/Action.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/Action.ts#L2)
 
 ___
 
@@ -701,7 +701,7 @@ ___
 
 #### Defined in
 
-types/Action.ts:3
+[types/Action.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/Action.ts#L3)
 
 # Interface: AssetResult
 
@@ -757,7 +757,7 @@ types/Action.ts:3
 
 #### Defined in
 
-types/AssetResult.ts:21
+[types/AssetResult.ts:21](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L21)
 
 ___
 
@@ -767,7 +767,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:11
+[types/AssetResult.ts:11](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L11)
 
 ___
 
@@ -777,7 +777,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:42
+[types/AssetResult.ts:42](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L42)
 
 ___
 
@@ -787,7 +787,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:6
+[types/AssetResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L6)
 
 ___
 
@@ -797,7 +797,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:16
+[types/AssetResult.ts:16](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L16)
 
 ___
 
@@ -807,7 +807,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:9
+[types/AssetResult.ts:9](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L9)
 
 ___
 
@@ -817,7 +817,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:34
+[types/AssetResult.ts:34](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L34)
 
 ___
 
@@ -827,7 +827,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:32
+[types/AssetResult.ts:32](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L32)
 
 ___
 
@@ -837,7 +837,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:7
+[types/AssetResult.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L7)
 
 ___
 
@@ -847,7 +847,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:5
+[types/AssetResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L5)
 
 ___
 
@@ -857,7 +857,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:19
+[types/AssetResult.ts:19](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L19)
 
 ___
 
@@ -867,7 +867,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:24
+[types/AssetResult.ts:24](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L24)
 
 ___
 
@@ -877,7 +877,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:17
+[types/AssetResult.ts:17](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L17)
 
 ___
 
@@ -887,7 +887,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:18
+[types/AssetResult.ts:18](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L18)
 
 ___
 
@@ -897,7 +897,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:8
+[types/AssetResult.ts:8](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L8)
 
 ___
 
@@ -907,7 +907,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:10
+[types/AssetResult.ts:10](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L10)
 
 ___
 
@@ -917,7 +917,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:39
+[types/AssetResult.ts:39](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L39)
 
 ___
 
@@ -927,7 +927,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:33
+[types/AssetResult.ts:33](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L33)
 
 ___
 
@@ -937,7 +937,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:40
+[types/AssetResult.ts:40](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L40)
 
 ___
 
@@ -947,7 +947,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:30
+[types/AssetResult.ts:30](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L30)
 
 ___
 
@@ -957,7 +957,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:31
+[types/AssetResult.ts:31](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L31)
 
 ___
 
@@ -967,7 +967,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:29
+[types/AssetResult.ts:29](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L29)
 
 ___
 
@@ -977,7 +977,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:36
+[types/AssetResult.ts:36](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L36)
 
 ___
 
@@ -987,7 +987,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:28
+[types/AssetResult.ts:28](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L28)
 
 ___
 
@@ -997,7 +997,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:41
+[types/AssetResult.ts:41](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L41)
 
 ___
 
@@ -1007,7 +1007,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:35
+[types/AssetResult.ts:35](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L35)
 
 ___
 
@@ -1017,7 +1017,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:37
+[types/AssetResult.ts:37](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L37)
 
 ___
 
@@ -1027,7 +1027,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:25
+[types/AssetResult.ts:25](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L25)
 
 ___
 
@@ -1037,7 +1037,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:26
+[types/AssetResult.ts:26](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L26)
 
 ___
 
@@ -1047,7 +1047,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:13
+[types/AssetResult.ts:13](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L13)
 
 ___
 
@@ -1057,7 +1057,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:43
+[types/AssetResult.ts:43](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L43)
 
 ___
 
@@ -1067,7 +1067,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:23
+[types/AssetResult.ts:23](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L23)
 
 ___
 
@@ -1077,7 +1077,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:22
+[types/AssetResult.ts:22](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L22)
 
 ___
 
@@ -1087,7 +1087,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:12
+[types/AssetResult.ts:12](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L12)
 
 ___
 
@@ -1097,7 +1097,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:38
+[types/AssetResult.ts:38](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L38)
 
 ___
 
@@ -1107,7 +1107,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:20
+[types/AssetResult.ts:20](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L20)
 
 ___
 
@@ -1117,7 +1117,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:27
+[types/AssetResult.ts:27](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L27)
 
 ___
 
@@ -1127,7 +1127,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:15
+[types/AssetResult.ts:15](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L15)
 
 ___
 
@@ -1137,7 +1137,7 @@ ___
 
 #### Defined in
 
-types/AssetResult.ts:14
+[types/AssetResult.ts:14](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/AssetResult.ts#L14)
 
 # Interface: BuyOrderResult
 
@@ -1162,7 +1162,7 @@ types/AssetResult.ts:14
 
 #### Defined in
 
-types/BuyOrderResult.ts:4
+[types/BuyOrderResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L4)
 
 ___
 
@@ -1172,7 +1172,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderResult.ts:10
+[types/BuyOrderResult.ts:10](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L10)
 
 ___
 
@@ -1182,7 +1182,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderResult.ts:11
+[types/BuyOrderResult.ts:11](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L11)
 
 ___
 
@@ -1192,7 +1192,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderResult.ts:5
+[types/BuyOrderResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L5)
 
 ___
 
@@ -1202,7 +1202,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderResult.ts:7
+[types/BuyOrderResult.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L7)
 
 ___
 
@@ -1212,7 +1212,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderResult.ts:8
+[types/BuyOrderResult.ts:8](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L8)
 
 ___
 
@@ -1222,7 +1222,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderResult.ts:9
+[types/BuyOrderResult.ts:9](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L9)
 
 ___
 
@@ -1232,7 +1232,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderResult.ts:6
+[types/BuyOrderResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderResult.ts#L6)
 
 # Interface: BuyOrderStatusResult
 
@@ -1255,7 +1255,7 @@ types/BuyOrderResult.ts:6
 
 #### Defined in
 
-types/BuyOrderStatusResult.ts:3
+[types/BuyOrderStatusResult.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderStatusResult.ts#L3)
 
 ___
 
@@ -1265,7 +1265,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderStatusResult.ts:4
+[types/BuyOrderStatusResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderStatusResult.ts#L4)
 
 ___
 
@@ -1275,7 +1275,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderStatusResult.ts:7
+[types/BuyOrderStatusResult.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderStatusResult.ts#L7)
 
 ___
 
@@ -1285,7 +1285,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderStatusResult.ts:5
+[types/BuyOrderStatusResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderStatusResult.ts#L5)
 
 ___
 
@@ -1295,7 +1295,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderStatusResult.ts:6
+[types/BuyOrderStatusResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderStatusResult.ts#L6)
 
 ___
 
@@ -1305,7 +1305,7 @@ ___
 
 #### Defined in
 
-types/BuyOrderStatusResult.ts:2
+[types/BuyOrderStatusResult.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/BuyOrderStatusResult.ts#L2)
 
 # Interface: CreateBuyOrderOptions
 
@@ -1325,7 +1325,7 @@ types/BuyOrderStatusResult.ts:2
 
 #### Defined in
 
-types/CreateBuyOrderOptions.ts:4
+[types/CreateBuyOrderOptions.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateBuyOrderOptions.ts#L4)
 
 ___
 
@@ -1335,7 +1335,7 @@ ___
 
 #### Defined in
 
-types/CreateBuyOrderOptions.ts:2
+[types/CreateBuyOrderOptions.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateBuyOrderOptions.ts#L2)
 
 ___
 
@@ -1345,7 +1345,7 @@ ___
 
 #### Defined in
 
-types/CreateBuyOrderOptions.ts:3
+[types/CreateBuyOrderOptions.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateBuyOrderOptions.ts#L3)
 
 # Interface: CreateBuyOrderResult
 
@@ -1364,7 +1364,7 @@ types/CreateBuyOrderOptions.ts:3
 
 #### Defined in
 
-types/CreateBuyOrderResult.ts:3
+[types/CreateBuyOrderResult.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateBuyOrderResult.ts#L3)
 
 ___
 
@@ -1374,7 +1374,7 @@ ___
 
 #### Defined in
 
-types/CreateBuyOrderResult.ts:2
+[types/CreateBuyOrderResult.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateBuyOrderResult.ts#L2)
 
 # Interface: CreateSellOrderOptions
 
@@ -1395,7 +1395,7 @@ types/CreateBuyOrderResult.ts:2
 
 #### Defined in
 
-types/CreateSellOrderOptions.ts:5
+[types/CreateSellOrderOptions.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderOptions.ts#L5)
 
 ___
 
@@ -1405,7 +1405,7 @@ ___
 
 #### Defined in
 
-types/CreateSellOrderOptions.ts:2
+[types/CreateSellOrderOptions.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderOptions.ts#L2)
 
 ___
 
@@ -1415,7 +1415,7 @@ ___
 
 #### Defined in
 
-types/CreateSellOrderOptions.ts:3
+[types/CreateSellOrderOptions.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderOptions.ts#L3)
 
 ___
 
@@ -1425,7 +1425,7 @@ ___
 
 #### Defined in
 
-types/CreateSellOrderOptions.ts:4
+[types/CreateSellOrderOptions.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderOptions.ts#L4)
 
 # Interface: CreateSellOrderResult
 
@@ -1447,7 +1447,7 @@ types/CreateSellOrderOptions.ts:4
 
 #### Defined in
 
-types/CreateSellOrderResult.ts:6
+[types/CreateSellOrderResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderResult.ts#L6)
 
 ___
 
@@ -1457,7 +1457,7 @@ ___
 
 #### Defined in
 
-types/CreateSellOrderResult.ts:5
+[types/CreateSellOrderResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderResult.ts#L5)
 
 ___
 
@@ -1467,7 +1467,7 @@ ___
 
 #### Defined in
 
-types/CreateSellOrderResult.ts:4
+[types/CreateSellOrderResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderResult.ts#L4)
 
 ___
 
@@ -1477,7 +1477,7 @@ ___
 
 #### Defined in
 
-types/CreateSellOrderResult.ts:3
+[types/CreateSellOrderResult.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderResult.ts#L3)
 
 ___
 
@@ -1487,7 +1487,7 @@ ___
 
 #### Defined in
 
-types/CreateSellOrderResult.ts:2
+[types/CreateSellOrderResult.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/CreateSellOrderResult.ts#L2)
 
 # Interface: Description
 
@@ -1508,7 +1508,7 @@ types/CreateSellOrderResult.ts:2
 
 #### Defined in
 
-types/Description.ts:4
+[types/Description.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/Description.ts#L4)
 
 ___
 
@@ -1518,7 +1518,7 @@ ___
 
 #### Defined in
 
-types/Description.ts:5
+[types/Description.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/Description.ts#L5)
 
 ___
 
@@ -1528,7 +1528,7 @@ ___
 
 #### Defined in
 
-types/Description.ts:2
+[types/Description.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/Description.ts#L2)
 
 ___
 
@@ -1538,7 +1538,7 @@ ___
 
 #### Defined in
 
-types/Description.ts:3
+[types/Description.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/Description.ts#L3)
 
 # Interface: ItemOrdersHistogramResult
 
@@ -1569,7 +1569,7 @@ types/Description.ts:3
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:9
+[types/ItemOrdersHistogramResult.ts:9](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L9)
 
 ___
 
@@ -1579,7 +1579,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:6
+[types/ItemOrdersHistogramResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L6)
 
 ___
 
@@ -1589,7 +1589,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:5
+[types/ItemOrdersHistogramResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L5)
 
 ___
 
@@ -1599,7 +1599,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:21
+[types/ItemOrdersHistogramResult.ts:21](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L21)
 
 ___
 
@@ -1609,7 +1609,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:19
+[types/ItemOrdersHistogramResult.ts:19](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L19)
 
 ___
 
@@ -1619,7 +1619,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:20
+[types/ItemOrdersHistogramResult.ts:20](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L20)
 
 ___
 
@@ -1629,7 +1629,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:7
+[types/ItemOrdersHistogramResult.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L7)
 
 ___
 
@@ -1639,7 +1639,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:8
+[types/ItemOrdersHistogramResult.ts:8](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L8)
 
 ___
 
@@ -1649,7 +1649,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:22
+[types/ItemOrdersHistogramResult.ts:22](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L22)
 
 ___
 
@@ -1659,7 +1659,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:23
+[types/ItemOrdersHistogramResult.ts:23](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L23)
 
 ___
 
@@ -1669,7 +1669,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:14
+[types/ItemOrdersHistogramResult.ts:14](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L14)
 
 ___
 
@@ -1679,7 +1679,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:4
+[types/ItemOrdersHistogramResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L4)
 
 ___
 
@@ -1689,7 +1689,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:3
+[types/ItemOrdersHistogramResult.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L3)
 
 ___
 
@@ -1699,7 +1699,7 @@ ___
 
 #### Defined in
 
-types/ItemOrdersHistogramResult.ts:2
+[types/ItemOrdersHistogramResult.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ItemOrdersHistogramResult.ts#L2)
 
 # Interface: ListingResult
 
@@ -1748,7 +1748,7 @@ types/ItemOrdersHistogramResult.ts:2
 
 #### Defined in
 
-types/ListingResult.ts:16
+[types/ListingResult.ts:16](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L16)
 
 ___
 
@@ -1758,7 +1758,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:6
+[types/ListingResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L6)
 
 ___
 
@@ -1768,7 +1768,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:23
+[types/ListingResult.ts:23](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L23)
 
 ___
 
@@ -1778,7 +1778,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:14
+[types/ListingResult.ts:14](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L14)
 
 ___
 
@@ -1788,7 +1788,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:13
+[types/ListingResult.ts:13](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L13)
 
 ___
 
@@ -1798,7 +1798,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:31
+[types/ListingResult.ts:31](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L31)
 
 ___
 
@@ -1808,7 +1808,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:12
+[types/ListingResult.ts:12](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L12)
 
 ___
 
@@ -1818,7 +1818,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:30
+[types/ListingResult.ts:30](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L30)
 
 ___
 
@@ -1828,7 +1828,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:20
+[types/ListingResult.ts:20](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L20)
 
 ___
 
@@ -1838,7 +1838,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:33
+[types/ListingResult.ts:33](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L33)
 
 ___
 
@@ -1848,7 +1848,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:18
+[types/ListingResult.ts:18](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L18)
 
 ___
 
@@ -1858,7 +1858,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:32
+[types/ListingResult.ts:32](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L32)
 
 ___
 
@@ -1868,7 +1868,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:11
+[types/ListingResult.ts:11](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L11)
 
 ___
 
@@ -1878,7 +1878,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:10
+[types/ListingResult.ts:10](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L10)
 
 ___
 
@@ -1888,7 +1888,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:27
+[types/ListingResult.ts:27](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L27)
 
 ___
 
@@ -1898,7 +1898,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:24
+[types/ListingResult.ts:24](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L24)
 
 ___
 
@@ -1908,7 +1908,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:4
+[types/ListingResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L4)
 
 ___
 
@@ -1918,7 +1918,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:25
+[types/ListingResult.ts:25](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L25)
 
 ___
 
@@ -1928,7 +1928,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:9
+[types/ListingResult.ts:9](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L9)
 
 ___
 
@@ -1938,7 +1938,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:26
+[types/ListingResult.ts:26](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L26)
 
 ___
 
@@ -1948,7 +1948,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:8
+[types/ListingResult.ts:8](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L8)
 
 ___
 
@@ -1958,7 +1958,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:19
+[types/ListingResult.ts:19](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L19)
 
 ___
 
@@ -1968,7 +1968,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:22
+[types/ListingResult.ts:22](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L22)
 
 ___
 
@@ -1978,7 +1978,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:29
+[types/ListingResult.ts:29](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L29)
 
 ___
 
@@ -1988,7 +1988,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:21
+[types/ListingResult.ts:21](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L21)
 
 ___
 
@@ -1998,7 +1998,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:15
+[types/ListingResult.ts:15](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L15)
 
 ___
 
@@ -2008,7 +2008,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:17
+[types/ListingResult.ts:17](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L17)
 
 ___
 
@@ -2018,7 +2018,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:28
+[types/ListingResult.ts:28](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L28)
 
 ___
 
@@ -2028,7 +2028,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:7
+[types/ListingResult.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L7)
 
 ___
 
@@ -2038,7 +2038,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:5
+[types/ListingResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L5)
 
 ___
 
@@ -2048,7 +2048,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:35
+[types/ListingResult.ts:35](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L35)
 
 ___
 
@@ -2058,7 +2058,7 @@ ___
 
 #### Defined in
 
-types/ListingResult.ts:34
+[types/ListingResult.ts:34](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ListingResult.ts#L34)
 
 # Interface: MarketOptions
 
@@ -2078,7 +2078,7 @@ types/ListingResult.ts:34
 
 #### Defined in
 
-types/MarketOptions.ts:2
+[types/MarketOptions.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MarketOptions.ts#L2)
 
 ___
 
@@ -2088,7 +2088,7 @@ ___
 
 #### Defined in
 
-types/MarketOptions.ts:3
+[types/MarketOptions.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MarketOptions.ts#L3)
 
 ___
 
@@ -2098,7 +2098,7 @@ ___
 
 #### Defined in
 
-types/MarketOptions.ts:4
+[types/MarketOptions.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MarketOptions.ts#L4)
 
 # Interface: MyListingsResult
 
@@ -2125,7 +2125,7 @@ types/MarketOptions.ts:4
 
 #### Defined in
 
-types/MyListingsResult.ts:9
+[types/MyListingsResult.ts:9](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L9)
 
 ___
 
@@ -2135,7 +2135,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:15
+[types/MyListingsResult.ts:15](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L15)
 
 ___
 
@@ -2145,7 +2145,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:12
+[types/MyListingsResult.ts:12](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L12)
 
 ___
 
@@ -2155,7 +2155,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:13
+[types/MyListingsResult.ts:13](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L13)
 
 ___
 
@@ -2165,7 +2165,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:14
+[types/MyListingsResult.ts:14](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L14)
 
 ___
 
@@ -2175,7 +2175,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:11
+[types/MyListingsResult.ts:11](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L11)
 
 ___
 
@@ -2185,7 +2185,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:7
+[types/MyListingsResult.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L7)
 
 ___
 
@@ -2195,7 +2195,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:10
+[types/MyListingsResult.ts:10](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L10)
 
 ___
 
@@ -2205,7 +2205,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:6
+[types/MyListingsResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L6)
 
 ___
 
@@ -2215,7 +2215,7 @@ ___
 
 #### Defined in
 
-types/MyListingsResult.ts:8
+[types/MyListingsResult.ts:8](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/MyListingsResult.ts#L8)
 
 # Interface: PriceHistoryResult
 
@@ -2236,7 +2236,7 @@ types/MyListingsResult.ts:8
 
 #### Defined in
 
-types/PriceHistoryResult.ts:3
+[types/PriceHistoryResult.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceHistoryResult.ts#L3)
 
 ___
 
@@ -2246,7 +2246,7 @@ ___
 
 #### Defined in
 
-types/PriceHistoryResult.ts:4
+[types/PriceHistoryResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceHistoryResult.ts#L4)
 
 ___
 
@@ -2256,7 +2256,7 @@ ___
 
 #### Defined in
 
-types/PriceHistoryResult.ts:5
+[types/PriceHistoryResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceHistoryResult.ts#L5)
 
 ___
 
@@ -2266,7 +2266,7 @@ ___
 
 #### Defined in
 
-types/PriceHistoryResult.ts:2
+[types/PriceHistoryResult.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceHistoryResult.ts#L2)
 
 # Interface: PriceOverviewResult
 
@@ -2287,7 +2287,7 @@ types/PriceHistoryResult.ts:2
 
 #### Defined in
 
-types/PriceOverviewResult.ts:3
+[types/PriceOverviewResult.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceOverviewResult.ts#L3)
 
 ___
 
@@ -2297,7 +2297,7 @@ ___
 
 #### Defined in
 
-types/PriceOverviewResult.ts:5
+[types/PriceOverviewResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceOverviewResult.ts#L5)
 
 ___
 
@@ -2307,7 +2307,7 @@ ___
 
 #### Defined in
 
-types/PriceOverviewResult.ts:2
+[types/PriceOverviewResult.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceOverviewResult.ts#L2)
 
 ___
 
@@ -2317,7 +2317,7 @@ ___
 
 #### Defined in
 
-types/PriceOverviewResult.ts:4
+[types/PriceOverviewResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/PriceOverviewResult.ts#L4)
 
 # Interface: SearchOptions
 
@@ -2340,7 +2340,7 @@ types/PriceOverviewResult.ts:4
 
 #### Defined in
 
-types/SearchOptions.ts:4
+[types/SearchOptions.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchOptions.ts#L4)
 
 ___
 
@@ -2350,7 +2350,7 @@ ___
 
 #### Defined in
 
-types/SearchOptions.ts:2
+[types/SearchOptions.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchOptions.ts#L2)
 
 ___
 
@@ -2360,7 +2360,7 @@ ___
 
 #### Defined in
 
-types/SearchOptions.ts:5
+[types/SearchOptions.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchOptions.ts#L5)
 
 ___
 
@@ -2370,7 +2370,7 @@ ___
 
 #### Defined in
 
-types/SearchOptions.ts:6
+[types/SearchOptions.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchOptions.ts#L6)
 
 ___
 
@@ -2380,7 +2380,7 @@ ___
 
 #### Defined in
 
-types/SearchOptions.ts:7
+[types/SearchOptions.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchOptions.ts#L7)
 
 ___
 
@@ -2390,7 +2390,7 @@ ___
 
 #### Defined in
 
-types/SearchOptions.ts:3
+[types/SearchOptions.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchOptions.ts#L3)
 
 # Interface: SearchResult
 
@@ -2413,21 +2413,18 @@ types/SearchOptions.ts:3
 
 #### Defined in
 
-types/SearchResult.ts:4
+[types/SearchResult.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchResult.ts#L4)
 
 ___
 
 ### results
 
-• **results**: { `appIcon`: `string` ; `appName`: `string` ; `assetDescription`: { `appId`: `number`
-; `backgroundColor`: `string` ; `classId`: `string` ; `commodity`: `boolean` ; `iconUrl`: `string`
-; `instanceId`: `string` ; `marketHashName`: `string` ; `marketName`: `string` ; `name`: `string`
-; `nameColor`: `string` ; `tradable`: `boolean` ; `type`: `string`  } ; `hashName`: `string` ; `name`: `string`
-; `salePriceText`: `string` ; `sellListings`: `number` ; `sellPrice`: `number` ; `sellPriceText`: `string`  }[]
+• **results
+**: { `appIcon`: `string` ; `appName`: `string` ; `assetDescription`: { `appId`: `number` ; `backgroundColor`: `string` ; `classId`: `string` ; `commodity`: `boolean` ; `iconUrl`: `string` ; `instanceId`: `string` ; `marketHashName`: `string` ; `marketName`: `string` ; `name`: `string` ; `nameColor`: `string` ; `tradable`: `boolean` ; `type`: `string`  } ; `hashName`: `string` ; `name`: `string` ; `salePriceText`: `string` ; `sellListings`: `number` ; `sellPrice`: `number` ; `sellPriceText`: `string`  }[]
 
 #### Defined in
 
-types/SearchResult.ts:14
+[types/SearchResult.ts:14](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchResult.ts#L14)
 
 ___
 
@@ -2437,18 +2434,18 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `classPrefix` | `string` |
-| `pageSize` | `number` |
-| `prefix` | `string` |
-| `query` | `string` |
+| Name                 | Type      |
+|:---------------------|:----------|
+| `classPrefix`        | `string`  |
+| `pageSize`           | `number`  |
+| `prefix`             | `string`  |
+| `query`              | `string`  |
 | `searchDescriptions` | `boolean` |
-| `totalCount` | `number` |
+| `totalCount`         | `number`  |
 
 #### Defined in
 
-types/SearchResult.ts:6
+[types/SearchResult.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchResult.ts#L6)
 
 ___
 
@@ -2458,7 +2455,7 @@ ___
 
 #### Defined in
 
-types/SearchResult.ts:3
+[types/SearchResult.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchResult.ts#L3)
 
 ___
 
@@ -2468,7 +2465,7 @@ ___
 
 #### Defined in
 
-types/SearchResult.ts:2
+[types/SearchResult.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchResult.ts#L2)
 
 ___
 
@@ -2478,7 +2475,7 @@ ___
 
 #### Defined in
 
-types/SearchResult.ts:5
+[types/SearchResult.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/SearchResult.ts#L5)
 
 # Enumeration: ECurrencyCode
 
@@ -2536,7 +2533,7 @@ types/SearchResult.ts:5
 
 #### Defined in
 
-types/ECurrencyCode.ts:34
+[types/ECurrencyCode.ts:34](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L34)
 
 ___
 
@@ -2546,7 +2543,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:35
+[types/ECurrencyCode.ts:35](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L35)
 
 ___
 
@@ -2556,7 +2553,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:23
+[types/ECurrencyCode.ts:23](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L23)
 
 ___
 
@@ -2566,7 +2563,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:9
+[types/ECurrencyCode.ts:9](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L9)
 
 ___
 
@@ -2576,7 +2573,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:37
+[types/ECurrencyCode.ts:37](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L37)
 
 ___
 
@@ -2586,7 +2583,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:22
+[types/ECurrencyCode.ts:22](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L22)
 
 ___
 
@@ -2596,7 +2593,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:6
+[types/ECurrencyCode.ts:6](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L6)
 
 ___
 
@@ -2606,7 +2603,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:27
+[types/ECurrencyCode.ts:27](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L27)
 
 ___
 
@@ -2616,7 +2613,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:25
+[types/ECurrencyCode.ts:25](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L25)
 
 ___
 
@@ -2626,7 +2623,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:29
+[types/ECurrencyCode.ts:29](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L29)
 
 ___
 
@@ -2636,7 +2633,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:41
+[types/ECurrencyCode.ts:41](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L41)
 
 ___
 
@@ -2646,7 +2643,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:5
+[types/ECurrencyCode.ts:5](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L5)
 
 ___
 
@@ -2656,7 +2653,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:4
+[types/ECurrencyCode.ts:4](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L4)
 
 ___
 
@@ -2666,7 +2663,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:31
+[types/ECurrencyCode.ts:31](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L31)
 
 ___
 
@@ -2676,7 +2673,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:12
+[types/ECurrencyCode.ts:12](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L12)
 
 ___
 
@@ -2686,7 +2683,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:36
+[types/ECurrencyCode.ts:36](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L36)
 
 ___
 
@@ -2696,7 +2693,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:26
+[types/ECurrencyCode.ts:26](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L26)
 
 ___
 
@@ -2706,7 +2703,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:2
+[types/ECurrencyCode.ts:2](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L2)
 
 ___
 
@@ -2716,7 +2713,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:10
+[types/ECurrencyCode.ts:10](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L10)
 
 ___
 
@@ -2726,7 +2723,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:18
+[types/ECurrencyCode.ts:18](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L18)
 
 ___
 
@@ -2736,7 +2733,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:39
+[types/ECurrencyCode.ts:39](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L39)
 
 ___
 
@@ -2746,7 +2743,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:38
+[types/ECurrencyCode.ts:38](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L38)
 
 ___
 
@@ -2756,7 +2753,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:21
+[types/ECurrencyCode.ts:21](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L21)
 
 ___
 
@@ -2766,7 +2763,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:13
+[types/ECurrencyCode.ts:13](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L13)
 
 ___
 
@@ -2776,7 +2773,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:11
+[types/ECurrencyCode.ts:11](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L11)
 
 ___
 
@@ -2786,7 +2783,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:24
+[types/ECurrencyCode.ts:24](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L24)
 
 ___
 
@@ -2796,7 +2793,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:28
+[types/ECurrencyCode.ts:28](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L28)
 
 ___
 
@@ -2806,7 +2803,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:14
+[types/ECurrencyCode.ts:14](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L14)
 
 ___
 
@@ -2816,7 +2813,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:8
+[types/ECurrencyCode.ts:8](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L8)
 
 ___
 
@@ -2826,7 +2823,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:40
+[types/ECurrencyCode.ts:40](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L40)
 
 ___
 
@@ -2836,7 +2833,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:7
+[types/ECurrencyCode.ts:7](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L7)
 
 ___
 
@@ -2846,7 +2843,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:33
+[types/ECurrencyCode.ts:33](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L33)
 
 ___
 
@@ -2856,7 +2853,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:15
+[types/ECurrencyCode.ts:15](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L15)
 
 ___
 
@@ -2866,7 +2863,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:16
+[types/ECurrencyCode.ts:16](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L16)
 
 ___
 
@@ -2876,7 +2873,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:19
+[types/ECurrencyCode.ts:19](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L19)
 
 ___
 
@@ -2886,7 +2883,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:32
+[types/ECurrencyCode.ts:32](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L32)
 
 ___
 
@@ -2896,7 +2893,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:20
+[types/ECurrencyCode.ts:20](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L20)
 
 ___
 
@@ -2906,7 +2903,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:3
+[types/ECurrencyCode.ts:3](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L3)
 
 ___
 
@@ -2916,7 +2913,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:42
+[types/ECurrencyCode.ts:42](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L42)
 
 ___
 
@@ -2926,7 +2923,7 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:17
+[types/ECurrencyCode.ts:17](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L17)
 
 ___
 
@@ -2936,4 +2933,4 @@ ___
 
 #### Defined in
 
-types/ECurrencyCode.ts:30
+[types/ECurrencyCode.ts:30](https://github.com/vladislav-puzyrev/steam-market/blob/44c1197/src/types/ECurrencyCode.ts#L30)
