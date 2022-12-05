@@ -18,10 +18,13 @@
     "url": "https://github.com/vladislav-puzyrev/steam-market.git"
   },
   "scripts": {
-    "build": "tsc",
-    "docs": "yarn run docs:typedoc && yarn run docs:concat",
+    "build": "yarn run clean:build && tsc",
+    "docs": "yarn run clean:docs && yarn run docs:typedoc && yarn run docs:concat",
     "docs:typedoc": "typedoc --plugin typedoc-plugin-markdown --hideBreadcrumbs --name API src/index.ts",
     "docs:concat": "concat-md --hide-anchor-links docs > README.md",
+    "clean": "yarn run clean:build && yarn run clean:docs",
+    "clean:build": "rimraf build",
+    "clean:docs": "rimraf docs",
     "test": "yarn run test:typescript && yarn run test:eslint && yarn run test:ncu",
     "test:typescript": "tsc --noEmit",
     "test:eslint": "eslint .",
@@ -43,6 +46,7 @@
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
     "npm-check-updates": "^16.4.3",
+    "rimraf": "^3.0.2",
     "typedoc": "^0.23.21",
     "typedoc-plugin-markdown": "^3.14.0",
     "typescript": "^4.9.3"
