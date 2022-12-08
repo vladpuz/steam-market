@@ -232,7 +232,7 @@
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.3.13.tgz#da4bfd73f49bd541d28920ab0e2bf0ee80f71c91"
   integrity sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==
 
-"@typescript-eslint/eslint-plugin@^5.45.1":
+"@typescript-eslint/eslint-plugin@^5.46.0":
   version "5.46.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.46.0.tgz#9a96a713b9616c783501a3c1774c9e2b40217ad0"
   integrity sha512-QrZqaIOzJAjv0sfjY4EjbXUi3ZOFpKfzntx22gPGr9pmFcTjcFw/1sS1LJhEubfAGwuLjNrPV0rH+D1/XZFy7Q==
@@ -247,7 +247,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.0.0", "@typescript-eslint/parser@^5.45.1":
+"@typescript-eslint/parser@^5.0.0", "@typescript-eslint/parser@^5.46.0":
   version "5.46.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.46.0.tgz#002d8e67122947922a62547acfed3347cbf2c0b6"
   integrity sha512-joNO6zMGUZg+C73vwrKXCd8usnsmOYmgW/w5ZW0pG0RGvqeznjtGDk61EqqTpNrFLUYBW2RSBFrxdAZMqA4OZA==
@@ -2553,7 +2553,7 @@ npm-bundled@^3.0.0:
   dependencies:
     npm-normalize-package-bin "^3.0.0"
 
-npm-check-updates@^16.4.3:
+npm-check-updates@^16.5.1:
   version "16.5.1"
   resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-16.5.1.tgz#f2c15c9c82a8b836745fc8d08d071af46dee3e32"
   integrity sha512-LSDcPpnK41GnsIw1JO+sUe1QJPA8+pzLOW5Ahep2zOBaZk+Dkg/stow3FAT19scfYZRx3YyKoehrJQOSXN3t6g==
@@ -3581,7 +3581,7 @@ typedoc@^0.23.21:
     minimatch "^5.1.0"
     shiki "^0.11.1"
 
-typescript@^4.9.3:
+typescript@^4.9.4:
   version "4.9.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.4.tgz#a2a3d2756c079abda241d75f149df9d561091e78"
   integrity sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==

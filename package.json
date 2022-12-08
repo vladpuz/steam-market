@@ -38,18 +38,18 @@
     "proxy-string-parser": "^3.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.45.1",
-    "@typescript-eslint/parser": "^5.45.1",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
     "concat-md": "^0.5.0",
     "eslint": "^8.29.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
-    "npm-check-updates": "^16.4.3",
+    "npm-check-updates": "^16.5.1",
     "rimraf": "^3.0.2",
     "typedoc": "^0.23.21",
     "typedoc-plugin-markdown": "^3.14.0",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.4"
   }
 }
