@@ -2,33 +2,33 @@ import axios, { Axios } from 'axios'
 import proxyParser from 'proxy-string-parser'
 import ISO4217 from 'currency-codes'
 import ISO6391 from 'iso-639-1'
-import { ECurrencyCode } from './types/ECurrencyCode'
-import { MarketOptions } from './types/MarketOptions'
-import { SearchOptions } from './types/SearchOptions'
-import { CreateBuyOrderOptions } from './types/CreateBuyOrderOptions'
-import { CreateSellOrderOptions } from './types/CreateSellOrderOptions'
-import { SearchResult } from './types/SearchResult'
-import { ItemOrdersHistogramResult } from './types/ItemOrdersHistogramResult'
-import { PriceOverviewResult } from './types/PriceOverviewResult'
-import { PriceHistoryResult } from './types/PriceHistoryResult'
-import { MyListingsResult } from './types/MyListingsResult'
-import { BuyOrderStatusResult } from './types/BuyOrderStatusResult'
-import { CreateBuyOrderResult } from './types/CreateBuyOrderResult'
-import { CreateSellOrderResult } from './types/CreateSellOrderResult'
-import { AssetResult } from './types/AssetResult'
-import { ListingResult } from './types/ListingResult'
-import { BuyOrderResult } from './types/BuyOrderResult'
-import { SearchResponse } from './types/SearchResponse'
-import { ItemOrdersHistogramResponse } from './types/ItemOrdersHistogramResponse'
-import { PriceOverviewResponse } from './types/PriceOverviewResponse'
-import { PriceHistoryResponse } from './types/PriceHistoryResponse'
-import { MyListingsResponse } from './types/MyListingsResponse'
-import { BuyOrderStatusResponse } from './types/BuyOrderStatusResponse'
-import { CreateBuyOrderResponse } from './types/CreateBuyOrderResponse'
-import { CreateSellOrderResponse } from './types/CreateSellOrderResponse'
-import { AssetResponse } from './types/AssetResponse'
-import { ListingResponse } from './types/ListingResponse'
-import { BuyOrderResponse } from './types/BuyOrderResponse'
+import { ECurrencyCode } from './types/ECurrencyCode.js'
+import { MarketOptions } from './types/MarketOptions.js'
+import { SearchOptions } from './types/SearchOptions.js'
+import { CreateBuyOrderOptions } from './types/CreateBuyOrderOptions.js'
+import { CreateSellOrderOptions } from './types/CreateSellOrderOptions.js'
+import { SearchResult } from './types/SearchResult.js'
+import { ItemOrdersHistogramResult } from './types/ItemOrdersHistogramResult.js'
+import { PriceOverviewResult } from './types/PriceOverviewResult.js'
+import { PriceHistoryResult } from './types/PriceHistoryResult.js'
+import { MyListingsResult } from './types/MyListingsResult.js'
+import { BuyOrderStatusResult } from './types/BuyOrderStatusResult.js'
+import { CreateBuyOrderResult } from './types/CreateBuyOrderResult.js'
+import { CreateSellOrderResult } from './types/CreateSellOrderResult.js'
+import { AssetResult } from './types/AssetResult.js'
+import { ListingResult } from './types/ListingResult.js'
+import { BuyOrderResult } from './types/BuyOrderResult.js'
+import { SearchResponse } from './types/SearchResponse.js'
+import { ItemOrdersHistogramResponse } from './types/ItemOrdersHistogramResponse.js'
+import { PriceOverviewResponse } from './types/PriceOverviewResponse.js'
+import { PriceHistoryResponse } from './types/PriceHistoryResponse.js'
+import { MyListingsResponse } from './types/MyListingsResponse.js'
+import { BuyOrderStatusResponse } from './types/BuyOrderStatusResponse.js'
+import { CreateBuyOrderResponse } from './types/CreateBuyOrderResponse.js'
+import { CreateSellOrderResponse } from './types/CreateSellOrderResponse.js'
+import { AssetResponse } from './types/AssetResponse.js'
+import { ListingResponse } from './types/ListingResponse.js'
+import { BuyOrderResponse } from './types/BuyOrderResponse.js'
 
 class SteamMarket {
   private readonly server: Axios
@@ -413,13 +413,10 @@ class SteamMarket {
     })
 
     const assets: AssetResult[] = []
-    Object.keys(response.data.assets).forEach((firstKey) => {
-      const firstValue = response.data.assets[firstKey]
-      Object.keys(firstValue).forEach((secondKey) => {
-        const secondValue = firstValue[secondKey]
-        Object.keys(secondValue).forEach((thirdKey) => {
-          const thirdValue = secondValue[thirdKey]
-          assets.push(processAsset(thirdValue))
+    Object.values(response.data.assets).forEach((i) => {
+      Object.values(i).forEach((j) => {
+        Object.values(j).forEach((k) => {
+          assets.push(processAsset(k))
         })
       })
     })

@@ -1,4 +1,4 @@
-import { AssetResponse } from './AssetResponse'
+import { AssetResponse } from './AssetResponse.js'
 
 export interface ListingResponse {
   listingid: string

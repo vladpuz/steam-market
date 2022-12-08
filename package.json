@@ -11,6 +11,7 @@
   ],
   "license": "MIT",
   "author": "Vladislav Puzyrev",
+  "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "repository": {
@@ -34,7 +35,7 @@
     "axios": "^1.2.1",
     "currency-codes": "^2.1.0",
     "iso-639-1": "^2.1.15",
-    "proxy-string-parser": "^2.0.0"
+    "proxy-string-parser": "^3.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.45.1",

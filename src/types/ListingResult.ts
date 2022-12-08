@@ -1,4 +1,4 @@
-import { AssetResult } from './AssetResult'
+import { AssetResult } from './AssetResult.js'
 
 export interface ListingResult {
   listingId: number

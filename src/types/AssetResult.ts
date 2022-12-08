@@ -1,5 +1,5 @@
-import { Description } from './Description'
-import { Action } from './Action'
+import { Description } from './Description.js'
+import { Action } from './Action.js'
 
 export interface AssetResult {
   currency?: number | null

@@ -1,6 +1,6 @@
-import { AssetResult } from './AssetResult'
-import { ListingResult } from './ListingResult'
-import { BuyOrderResult } from './BuyOrderResult'
+import { AssetResult } from './AssetResult.js'
+import { ListingResult } from './ListingResult.js'
+import { BuyOrderResult } from './BuyOrderResult.js'
 
 export interface MyListingsResult {
   success: boolean
