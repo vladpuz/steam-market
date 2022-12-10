@@ -26,10 +26,9 @@
     "clean": "yarn run clean:build && yarn run clean:docs",
     "clean:build": "rimraf build",
     "clean:docs": "rimraf docs",
-    "test": "yarn run test:typescript && yarn run test:eslint && yarn run test:ncu",
+    "test": "yarn run test:typescript && yarn run test:eslint",
     "test:typescript": "tsc --noEmit",
-    "test:eslint": "eslint .",
-    "test:ncu": "ncu --errorLevel 2"
+    "test:eslint": "eslint ."
   },
   "dependencies": {
     "axios": "^1.2.1",
@@ -46,7 +45,6 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
-    "npm-check-updates": "^16.5.1",
     "rimraf": "^3.0.2",
     "typedoc": "^0.23.21",
     "typedoc-plugin-markdown": "^3.14.0",
