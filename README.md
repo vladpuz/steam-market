@@ -21,48 +21,43 @@ import SteamTotp from 'steam-totp'
 import SteamUser from 'steam-user'
 import SteamMarket from 'steam-market'
 
-// Wrapping the code in an asynchronous function to use await
-const main = async () => {
-  const client = new SteamUser()
-  const market = new SteamMarket()
+const client = new SteamUser()
+const market = new SteamMarket()
 
-  client.logOn({
-    accountName: 'username',
-    password: 'password',
-    twoFactorCode: SteamTotp.generateAuthCode('sharedSecret')
-  })
+client.logOn({
+  accountName: 'username',
+  password: 'password',
+  twoFactorCode: SteamTotp.generateAuthCode('sharedSecret')
+})
 
-  // Awaiting for all events of the client object to be executed to configure the market before using it
-  await Promise.all([
-    new Promise((resolve) => {
-      client.on('webSession', (sessionId, cookies) => {
-        market.setCookies(cookies)
-        resolve()
-      })
-    }),
-    new Promise((resolve) => {
-      client.on('wallet', (hasWallet, currency) => {
-        market.setCurrency(currency)
-        resolve()
-      })
-    }),
-    new Promise((resolve) => {
-      client.on('accountInfo', (name, country) => {
-        market.setCountry(country)
-        resolve()
-      })
+// Awaiting for all events of the client object to be executed to configure the market before using it
+await Promise.all([
+  new Promise((resolve) => {
+    client.on('webSession', (sessionId, cookies) => {
+      market.setCookies(cookies)
+      resolve()
     })
-  ])
+  }),
+  new Promise((resolve) => {
+    client.on('wallet', (hasWallet, currency) => {
+      market.setCurrency(currency)
+      resolve()
+    })
+  }),
+  new Promise((resolve) => {
+    client.on('accountInfo', (name, country) => {
+      market.setCountry(country)
+      resolve()
+    })
+  })
+])
 
-  // We also set the vanityURL after initializing the client object
-  market.setVanityURL(client.vanityURL ?? client.steamID?.getSteamID64() ?? '')
+// We also set the vanityURL after initializing the client object
+market.setVanityURL(client.vanityURL ?? client.steamID?.getSteamID64() ?? '')
 
-  // Now the market object is fully configured and ready for use
-  const items = await market.search(730)
-  console.log(items)
-}
-
-main()
+// Now the market object is fully configured and ready for use
+const items = await market.search(730)
+console.log(items)
 ```
 
 ## See also
