@@ -21,7 +21,7 @@
   "scripts": {
     "build": "yarn run clean:build && tsc",
     "docs": "yarn run clean:docs && yarn run docs:typedoc && yarn run docs:concat",
-    "docs:typedoc": "typedoc --plugin typedoc-plugin-markdown --hideBreadcrumbs --name API src/index.ts",
+    "docs:typedoc": "typedoc --plugin typedoc-plugin-markdown --excludePrivate --hideBreadcrumbs --name API src/index.ts",
     "docs:concat": "concat-md --hide-anchor-links docs > README.md",
     "clean": "yarn run clean:build && yarn run clean:docs",
     "clean:build": "rimraf build",
