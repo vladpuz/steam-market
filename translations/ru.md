@@ -18,6 +18,8 @@ npm install steam-market
 
 ## Использование
 
+### Со входом
+
 ```javascript
 import SteamTotp from 'steam-totp'
 import SteamUser from 'steam-user'
@@ -60,6 +62,34 @@ market.setVanityURL(client.vanityURL ?? client.steamID?.getSteamID64() ?? '')
 // Теперь объект market полностью настроен и готов к использованию
 const items = await market.search(730)
 console.log(items)
+```
+
+### Без входа
+
+```javascript
+import SteamMarket, { ECurrencyCode } from 'steam-market'
+
+const market = new SteamMarket()
+
+// Если необходимо задаем валюту и язык
+market.setCurrency(ECurrencyCode.RUB) // По умолчанию ECurrencyCode.USD
+market.setCountry('RU') // По умолчанию 'US'
+
+// Используем только доступные методы
+const appId = 730
+const marketHashName = 'G3SG1 | Digital Mesh (Well-Worn)'
+
+const items = await market.search(appId)
+console.log('search', items.success)
+
+const itemNameId = await market.itemNameId(appId, marketHashName)
+console.log('itemNameId', itemNameId)
+
+const itemOrdersHistogram = await market.itemOrdersHistogram(appId, marketHashName, itemNameId)
+console.log('itemOrdersHistogram', itemOrdersHistogram.success)
+
+const priceOverview = await market.priceOverview(appId, marketHashName)
+console.log('priceOverview', priceOverview.success)
 ```
 
 ## Смотрите также
