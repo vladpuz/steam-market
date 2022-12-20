@@ -194,6 +194,27 @@ class SteamMarket {
     }
   }
 
+  public async itemNameId (appId: number, marketHashName: string): Promise<number> {
+    const response = await this.server.get<string>(`/listings/${appId}/${marketHashName}`, {
+      headers: {
+        Cookie: this.getCookies().filter((cookie) => cookie.split('=')[0] === 'steamLogin').join('; '),
+        Referer: `https://steamcommunity.com/market/search?appid=${appId}`
+      }
+    })
+
+    const startString = 'Market_LoadOrderSpread('
+    const endString = ')'
+    const startPosition = response.data.indexOf(startString, 0)
+    const endPosition = response.data.indexOf(endString, startPosition)
+
+    if (startPosition === -1 || endPosition === -1) {
+      throw new Error('Value itemNameId not found')
+    }
+
+    const itemNameId = response.data.slice(startPosition + startString.length, endPosition).trim()
+    return Number(itemNameId)
+  }
+
   public async itemOrdersHistogram (
     appId: number,
     marketHashName: string,
@@ -238,27 +259,6 @@ class SteamMarket {
       pricePrefix: response.data.price_prefix,
       priceSuffix: response.data.price_suffix
     }
-  }
-
-  public async itemNameId (appId: number, marketHashName: string): Promise<number> {
-    const response = await this.server.get<string>(`/listings/${appId}/${marketHashName}`, {
-      headers: {
-        Cookie: this.getCookies().filter((cookie) => cookie.split('=')[0] === 'steamLogin').join('; '),
-        Referer: `https://steamcommunity.com/market/search?appid=${appId}`
-      }
-    })
-
-    const startString = 'Market_LoadOrderSpread('
-    const endString = ')'
-    const startPosition = response.data.indexOf(startString, 0)
-    const endPosition = response.data.indexOf(endString, startPosition)
-
-    if (startPosition === -1 || endPosition === -1) {
-      throw new Error('Value itemNameId not found')
-    }
-
-    const itemNameId = response.data.slice(startPosition + startString.length, endPosition).trim()
-    return Number(itemNameId)
   }
 
   public async priceOverview (appId: number, marketHashName: string): Promise<PriceOverviewResult> {
