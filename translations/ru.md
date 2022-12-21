@@ -75,7 +75,7 @@ const market = new SteamMarket()
 market.setCurrency(ECurrencyCode.RUB) // По умолчанию ECurrencyCode.USD
 market.setCountry('RU') // По умолчанию 'US'
 
-// Используем только доступные методы
+// Используем только доступные без входа методы
 const appId = 730
 const marketHashName = 'G3SG1 | Digital Mesh (Well-Worn)'
 

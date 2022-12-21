@@ -54,7 +54,7 @@ await Promise.all([
   })
 ])
 
-// We also set the vanityURL after initializing the client object
+// Also set the vanityURL after initializing the client object
 market.setVanityURL(client.vanityURL ?? client.steamID?.getSteamID64() ?? '')
 
 // Now the market object is fully configured and ready for use
@@ -73,7 +73,7 @@ const market = new SteamMarket()
 market.setCurrency(ECurrencyCode.RUB) // Default ECurrencyCode.USD
 market.setCountry('RU') // Default 'US'
 
-// We use only available methods
+// Use only available without log in methods
 const appId = 730
 const marketHashName = 'G3SG1 | Digital Mesh (Well-Worn)'
 
