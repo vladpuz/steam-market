@@ -12,23 +12,23 @@ import { ItemOrdersHistogramResult } from './types/ItemOrdersHistogramResult.js'
 import { PriceOverviewResult } from './types/PriceOverviewResult.js'
 import { PriceHistoryResult } from './types/PriceHistoryResult.js'
 import { MyListingsResult } from './types/MyListingsResult.js'
+import { MyHistoryResult } from './types/MyHistoryResult.js'
 import { BuyOrderStatusResult } from './types/BuyOrderStatusResult.js'
 import { CreateBuyOrderResult } from './types/CreateBuyOrderResult.js'
 import { CreateSellOrderResult } from './types/CreateSellOrderResult.js'
 import { AssetResult } from './types/AssetResult.js'
 import { ListingResult } from './types/ListingResult.js'
-import { BuyOrderResult } from './types/BuyOrderResult.js'
 import { SearchResponse } from './types/SearchResponse.js'
 import { ItemOrdersHistogramResponse } from './types/ItemOrdersHistogramResponse.js'
 import { PriceOverviewResponse } from './types/PriceOverviewResponse.js'
 import { PriceHistoryResponse } from './types/PriceHistoryResponse.js'
 import { MyListingsResponse } from './types/MyListingsResponse.js'
+import { MyHistoryResponse } from './types/MyHistoryResponse.js'
 import { BuyOrderStatusResponse } from './types/BuyOrderStatusResponse.js'
 import { CreateBuyOrderResponse } from './types/CreateBuyOrderResponse.js'
 import { CreateSellOrderResponse } from './types/CreateSellOrderResponse.js'
 import { AssetResponse } from './types/AssetResponse.js'
 import { ListingResponse } from './types/ListingResponse.js'
-import { BuyOrderResponse } from './types/BuyOrderResponse.js'
 
 class SteamMarket {
   private readonly server: Axios
@@ -60,6 +60,101 @@ class SteamMarket {
       },
       proxy: (proxy != null) ? proxyParser(proxy) : false
     })
+  }
+
+  private processAsset (asset: AssetResponse): AssetResult {
+    return {
+      currency: asset.currency,
+      appId: asset.appid,
+      contextId: Number(asset.contextid),
+      id: Number(asset.id),
+      classId: Number(asset.classid),
+      instanceId: Number(asset.instanceid),
+      amount: Number(asset.amount),
+      status: asset.status,
+      originalAmount: Number(asset.original_amount),
+      unownedId: Number(asset.unowned_id),
+      unownedContextId: Number(asset.unowned_contextid),
+      backgroundColor: asset.background_color,
+      iconUrl: asset.icon_url,
+      iconUrlLarge: asset.icon_url_large,
+      descriptions: asset.descriptions,
+      tradable: Boolean(asset.tradable),
+      actions: asset.actions,
+      ownerDescriptions: asset.owner_descriptions,
+      ownerActions: asset.owner_actions,
+      fraudWarnings: asset.fraudwarnings,
+      name: asset.name,
+      nameColor: asset.name_color,
+      type: asset.type,
+      marketName: asset.market_name,
+      marketHashName: asset.market_hash_name,
+      marketFee: asset.market_fee,
+      marketFeeApp: asset.market_fee_app,
+      containedItem: asset.contained_item,
+      marketActions: asset.market_actions,
+      commodity: Boolean(asset.commodity),
+      marketTradableRestriction: asset.market_tradable_restriction,
+      marketMarketableRestriction: asset.market_marketable_restriction,
+      marketable: Boolean(asset.marketable),
+      tags: asset.tags,
+      itemExpiration: asset.item_expiration,
+      marketBuyCountryRestriction: asset.market_buy_country_restriction,
+      marketSellCountryRestriction: asset.market_sell_country_restriction,
+      appIcon: asset.app_icon,
+      owner: Boolean(asset.owner)
+    }
+  }
+
+  private processAssets (assets: Record<string, Record<string, Record<string, AssetResponse>>>): AssetResult[] {
+    const array: AssetResult[] = []
+
+    Object.values(assets).forEach((i) => {
+      Object.values(i).forEach((j) => {
+        Object.values(j).forEach((k) => {
+          array.push(this.processAsset(k))
+        })
+      })
+    })
+
+    return array
+  }
+
+  private processListing (listing: ListingResponse): ListingResult {
+    return {
+      listingId: Number(listing.listingid),
+      timeCreated: listing.time_created,
+      asset: this.processAsset(listing.asset),
+      steamIdLister: Number(listing.steamid_lister),
+      price: listing.price,
+      originalPrice: listing.original_price,
+      fee: listing.fee,
+      currencyId: Number(listing.currencyid),
+      convertedPrice: listing.converted_price,
+      convertedFee: listing.converted_fee,
+      convertedCurrencyId: Number(listing.converted_currencyid),
+      status: listing.status,
+      active: listing.active,
+      steamFee: listing.steam_fee,
+      convertedSteamFee: listing.converted_steam_fee,
+      publisherFee: listing.publisher_fee,
+      convertedPublisherFee: listing.converted_publisher_fee,
+      publisherFeePercent: Number(listing.publisher_fee_percent),
+      publisherFeeApp: listing.publisher_fee_app,
+      cancelReason: listing.cancel_reason,
+      itemExpired: listing.item_expired,
+      originalAmountListed: listing.original_amount_listed,
+      originalPricePerUnit: listing.original_price_per_unit,
+      feePerUnit: listing.fee_per_unit,
+      steamFeePerUnit: listing.steam_fee_per_unit,
+      publisherFeePerUnit: listing.publisher_fee_per_unit,
+      convertedPricePerUnit: listing.converted_price_per_unit,
+      convertedFeePerUnit: listing.converted_fee_per_unit,
+      convertedSteamFeePerUnit: listing.converted_steam_fee_per_unit,
+      convertedPublisherFeePerUnit: listing.converted_publisher_fee_per_unit,
+      timeFinishHold: listing.time_finish_hold,
+      timeCreatedStr: listing.time_created_str
+    }
   }
 
   public setCookies (cookies: string[]): void {
@@ -324,114 +419,83 @@ class SteamMarket {
       }
     })
 
-    const processAsset = (asset: AssetResponse): AssetResult => ({
-      currency: asset.currency ?? null,
-      appId: asset.appid,
-      contextId: Number(asset.contextid) ?? null,
-      id: Number(asset.id) ?? null,
-      classId: Number(asset.classid),
-      instanceId: Number(asset.instanceid),
-      amount: Number(asset.amount) ?? null,
-      status: asset.status ?? null,
-      originalAmount: Number(asset.original_amount) ?? null,
-      unownedId: Number(asset.unowned_id) ?? null,
-      unownedContextId: Number(asset.unowned_contextid) ?? null,
-      backgroundColor: asset.background_color,
-      iconUrl: asset.icon_url,
-      iconUrlLarge: asset.icon_url_large,
-      descriptions: asset.descriptions,
-      tradable: Boolean(asset.tradable),
-      actions: asset.actions ?? null,
-      ownerDescriptions: asset.owner_descriptions ?? null,
-      ownerActions: asset.owner_actions ?? null,
-      fraudWarnings: asset.fraudwarnings ?? null,
-      name: asset.name,
-      nameColor: asset.name_color ?? null,
-      type: asset.type,
-      marketName: asset.market_name,
-      marketHashName: asset.market_hash_name,
-      marketFee: asset.market_fee ?? null,
-      marketFeeApp: asset.market_fee_app ?? null,
-      containedItem: asset.contained_item ?? null,
-      marketActions: asset.market_actions ?? null,
-      commodity: Boolean(asset.commodity),
-      marketTradableRestriction: asset.market_tradable_restriction,
-      marketMarketableRestriction: asset.market_marketable_restriction ?? null,
-      marketable: Boolean(asset.marketable),
-      tags: asset.tags ?? null,
-      itemExpiration: asset.item_expiration ?? null,
-      marketBuyCountryRestriction: asset.market_buy_country_restriction ?? null,
-      marketSellCountryRestriction: asset.market_sell_country_restriction ?? null,
-      appIcon: asset.app_icon ?? null,
-      owner: Boolean(asset.owner) ?? null
-    })
+    return {
+      success: response.data.success,
+      pageSize: response.data.pagesize,
+      totalCount: response.data.total_count,
+      assets: this.processAssets(response.data.assets),
+      start: response.data.start,
+      numActiveListings: response.data.num_active_listings,
+      listings: response.data.listings.map((listing) => this.processListing(listing)),
+      listingsOnHold: response.data.listings_on_hold.map((listing) => this.processListing(listing)),
+      listingsToConfirm: response.data.listings_to_confirm.map((listing) => this.processListing(listing)),
+      buyOrders: response.data.buy_orders.map((buyOrder) => ({
+        appId: buyOrder.appid,
+        hashName: buyOrder.hash_name,
+        walletCurrency: buyOrder.wallet_currency,
+        price: Number(buyOrder.price),
+        quantity: Number(buyOrder.quantity),
+        quantityRemaining: Number(buyOrder.quantity_remaining),
+        buyOrderId: Number(buyOrder.buy_orderid),
+        description: this.processAsset(buyOrder.description)
+      }))
+    }
+  }
 
-    const processListing = (listing: ListingResponse): ListingResult => ({
-      listingId: Number(listing.listingid),
-      timeCreated: listing.time_created,
-      asset: processAsset(listing.asset),
-      steamIdLister: Number(listing.steamid_lister),
-      price: listing.price,
-      originalPrice: listing.original_price,
-      fee: listing.fee,
-      currencyId: Number(listing.currencyid),
-      convertedPrice: listing.converted_price,
-      convertedFee: listing.converted_fee,
-      convertedCurrencyId: Number(listing.converted_currencyid),
-      status: listing.status,
-      active: listing.active,
-      steamFee: listing.steam_fee,
-      convertedSteamFee: listing.converted_steam_fee,
-      publisherFee: listing.publisher_fee,
-      convertedPublisherFee: listing.converted_publisher_fee,
-      publisherFeePercent: Number(listing.publisher_fee_percent),
-      publisherFeeApp: listing.publisher_fee_app,
-      cancelReason: listing.cancel_reason,
-      itemExpired: listing.item_expired,
-      originalAmountListed: listing.original_amount_listed,
-      originalPricePerUnit: listing.original_price_per_unit,
-      feePerUnit: listing.fee_per_unit,
-      steamFeePerUnit: listing.steam_fee_per_unit,
-      publisherFeePerUnit: listing.publisher_fee_per_unit,
-      convertedPricePerUnit: listing.converted_price_per_unit,
-      convertedFeePerUnit: listing.converted_fee_per_unit,
-      convertedSteamFeePerUnit: listing.converted_steam_fee_per_unit,
-      convertedPublisherFeePerUnit: listing.converted_publisher_fee_per_unit,
-      timeFinishHold: listing.time_finish_hold,
-      timeCreatedStr: listing.time_created_str
-    })
-
-    const processBuyOrder = (buyOrder: BuyOrderResponse): BuyOrderResult => ({
-      appId: buyOrder.appid,
-      hashName: buyOrder.hash_name,
-      walletCurrency: buyOrder.wallet_currency,
-      price: Number(buyOrder.price),
-      quantity: Number(buyOrder.quantity),
-      quantityRemaining: Number(buyOrder.quantity_remaining),
-      buyOrderId: Number(buyOrder.buy_orderid),
-      description: processAsset(buyOrder.description)
-    })
-
-    const assets: AssetResult[] = []
-    Object.values(response.data.assets).forEach((i) => {
-      Object.values(i).forEach((j) => {
-        Object.values(j).forEach((k) => {
-          assets.push(processAsset(k))
-        })
-      })
+  public async myHistory (start?: number | null, count?: number | null): Promise<MyHistoryResult> {
+    const response = await this.server.get<MyHistoryResponse>('/myhistory', {
+      params: {
+        start: start ?? '0',
+        count: count ?? '100',
+        norender: '1'
+      },
+      headers: {
+        Referer: 'https://steamcommunity.com/market',
+        'X-Prototype-Version': '1.7',
+        'X-Requested-With': 'XMLHttpRequest'
+      }
     })
 
     return {
       success: response.data.success,
       pageSize: response.data.pagesize,
       totalCount: response.data.total_count,
-      assets,
       start: response.data.start,
-      numActiveListings: response.data.num_active_listings,
-      listings: response.data.listings.map((listing) => processListing(listing)),
-      listingsOnHold: response.data.listings_on_hold.map((listing) => processListing(listing)),
-      listingsToConfirm: response.data.listings_to_confirm.map((listing) => processListing(listing)),
-      buyOrders: response.data.buy_orders.map((buyOrder) => processBuyOrder(buyOrder))
+      assets: this.processAssets(response.data.assets),
+      events: response.data.events.map((event) => ({
+        listingId: Number(event.listingid),
+        purchaseId: Number(event.purchaseid),
+        eventType: event.event_type,
+        timeEvent: event.time_event,
+        timeEventFraction: event.time_event_fraction,
+        steamIdActor: Number(event.steamid_actor),
+        dateEvent: event.date_event
+      })),
+      purchases: Object.values(response.data.purchases).map((purchase) => ({
+        listingId: Number(purchase.listingid),
+        purchaseId: Number(purchase.purchaseid),
+        timeSold: purchase.time_sold,
+        steamIdPurchaser: Number(purchase.steamid_purchaser),
+        needsRollback: purchase.needs_rollback,
+        failed: purchase.failed,
+        asset: this.processAsset(purchase.asset),
+        paidAmount: purchase.paid_amount,
+        paidFee: purchase.paid_fee,
+        currencyId: Number(purchase.currencyid),
+        steamFee: purchase.steam_fee,
+        publisherFee: purchase.publisher_fee,
+        publisherFeePercent: Number(purchase.publisher_fee_percent),
+        publisherFeeApp: purchase.publisher_fee_app,
+        receivedAmount: purchase.received_amount,
+        receivedCurrencyId: Number(purchase.received_currencyid),
+        fundsReturned: purchase.funds_returned,
+        avatarActor: purchase.avatar_actor,
+        personaActor: purchase.persona_actor,
+        fundsHeld: purchase.funds_held,
+        timeFundsHeldUntil: purchase.time_funds_held_until,
+        fundsRevoked: purchase.funds_revoked
+      })),
+      listings: Object.values(response.data.listings).map((listing) => this.processListing(listing))
     }
   }
 

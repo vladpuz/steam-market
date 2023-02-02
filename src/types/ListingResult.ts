@@ -2,35 +2,36 @@ import { AssetResult } from './AssetResult.js'
 
 export interface ListingResult {
   listingId: number
-  timeCreated: number
+  timeCreated?: number | null
   asset: AssetResult
-  steamIdLister: number
+  steamIdLister?: number | null
   price: number
   originalPrice: number
   fee: number
   currencyId: number
-  convertedPrice: number
-  convertedFee: number
-  convertedCurrencyId: number
-  status: number
-  active: number
-  steamFee: number
-  convertedSteamFee: number
-  publisherFee: number
-  convertedPublisherFee: number
+  convertedPrice?: number | null
+  convertedFee?: number | null
+  convertedCurrencyId?: number | null
+  status?: number | null
+  active?: number | null
+  steamFee?: number | null
+  convertedSteamFee?: number | null
+  publisherFee?: number | null
+  convertedPublisherFee?: number | null
   publisherFeePercent: number
   publisherFeeApp: number
-  cancelReason: number
-  itemExpired: number
-  originalAmountListed: number
-  originalPricePerUnit: number
-  feePerUnit: number
-  steamFeePerUnit: number
-  publisherFeePerUnit: number
-  convertedPricePerUnit: number
-  convertedFeePerUnit: number
-  convertedSteamFeePerUnit: number
-  convertedPublisherFeePerUnit: number
-  timeFinishHold: number
-  timeCreatedStr: string
+  cancelReason?: string | null
+  cancelReasonShort?: string | null
+  itemExpired?: number | null
+  originalAmountListed?: number | null
+  originalPricePerUnit?: number | null
+  feePerUnit?: number | null
+  steamFeePerUnit?: number | null
+  publisherFeePerUnit?: number | null
+  convertedPricePerUnit?: number | null
+  convertedFeePerUnit?: number | null
+  convertedSteamFeePerUnit?: number | null
+  convertedPublisherFeePerUnit?: number | null
+  timeFinishHold?: number | null
+  timeCreatedStr?: string | null
 }

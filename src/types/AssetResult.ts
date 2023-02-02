@@ -41,4 +41,8 @@ export interface AssetResult {
   marketSellCountryRestriction?: null
   appIcon?: string | null
   owner?: boolean | null
+  rollbackNewId?: string | null
+  rollbackNewContextId?: string | null
+  newId?: string | null
+  newContextId?: string | null
 }

@@ -41,4 +41,8 @@ export interface AssetResponse {
   market_sell_country_restriction?: null
   app_icon?: string | null
   owner?: number | null
+  rollback_new_id?: string | null
+  rollback_new_contextid?: string | null
+  new_id?: string | null
+  new_contextid?: string | null
 }
