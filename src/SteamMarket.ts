@@ -58,7 +58,11 @@ class SteamMarket {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
         ...additionalHeaders
       },
-      proxy: (proxy != null) ? proxyParser(proxy) : false
+      proxy: (proxy != null) ? proxyParser(proxy) : false,
+      validateStatus: (status) => {
+        if (status === 304) return true
+        return status >= 200 && status < 300
+      }
     })
   }
 
