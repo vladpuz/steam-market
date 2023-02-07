@@ -231,10 +231,10 @@ class SteamMarket {
     return this.vanityURL
   }
 
-  public async search (appId: number, options?: SearchOptions | null): Promise<Search> {
+  public async searchQuery (appId: number, options?: SearchOptions | null): Promise<SearchResponse> {
     const { query, start, count, searchDescriptions, sortColumn, sortDir } = options ?? {}
 
-    const response = await this.server.get<SearchResponse>('/search/render', {
+    const response = await this.server.get('/search/render', {
       params: {
         query: query ?? '',
         start: start ?? '0',
@@ -252,20 +252,26 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async search (appId: number, options?: SearchOptions | null): Promise<Search> {
+    const response = await this.searchQuery(appId, options)
+
     return {
-      success: response.data.success,
-      start: response.data.start,
-      pageSize: response.data.pagesize,
-      totalCount: response.data.total_count,
+      success: response.success,
+      start: response.start,
+      pageSize: response.pagesize,
+      totalCount: response.total_count,
       searchData: {
-        query: response.data.searchdata.query,
-        searchDescriptions: response.data.searchdata.search_descriptions,
-        totalCount: response.data.searchdata.total_count,
-        pageSize: response.data.searchdata.pagesize,
-        prefix: response.data.searchdata.prefix,
-        classPrefix: response.data.searchdata.class_prefix
+        query: response.searchdata.query,
+        searchDescriptions: response.searchdata.search_descriptions,
+        totalCount: response.searchdata.total_count,
+        pageSize: response.searchdata.pagesize,
+        prefix: response.searchdata.prefix,
+        classPrefix: response.searchdata.class_prefix
       },
-      results: response.data.results.map((result) => ({
+      results: response.results.map((result) => ({
         name: result.name,
         hashName: result.hash_name,
         sellListings: result.sell_listings,
@@ -293,33 +299,39 @@ class SteamMarket {
     }
   }
 
-  public async itemNameId (appId: number, marketHashName: string): Promise<number> {
-    const response = await this.server.get<string>(`/listings/${appId}/${marketHashName}`, {
+  public async itemNameIdQuery (appId: number, marketHashName: string): Promise<string> {
+    const response = await this.server.get(`/listings/${appId}/${marketHashName}`, {
       headers: {
         Cookie: this.getCookies().filter((cookie) => cookie.split('=')[0] === 'steamLogin').join('; '),
         Referer: `https://steamcommunity.com/market/search?appid=${appId}`
       }
     })
 
+    return response.data
+  }
+
+  public async itemNameId (appId: number, marketHashName: string): Promise<number> {
+    const response = await this.itemNameIdQuery(appId, marketHashName)
+
     const startString = 'Market_LoadOrderSpread('
     const endString = ')'
-    const startPosition = response.data.indexOf(startString, 0)
-    const endPosition = response.data.indexOf(endString, startPosition)
+    const startPosition = response.indexOf(startString, 0)
+    const endPosition = response.indexOf(endString, startPosition)
 
     if (startPosition === -1 || endPosition === -1) {
       throw new Error('Value itemNameId not found')
     }
 
-    const itemNameId = response.data.slice(startPosition + startString.length, endPosition).trim()
+    const itemNameId = response.slice(startPosition + startString.length, endPosition).trim()
     return Number(itemNameId)
   }
 
-  public async itemOrdersHistogram (
+  public async itemOrdersHistogramQuery (
     appId: number,
     marketHashName: string,
     itemNameId: number
-  ): Promise<ItemOrdersHistogram> {
-    const response = await this.server.get<ItemOrdersHistogramResponse>('/itemordershistogram', {
+  ): Promise<ItemOrdersHistogramResponse> {
+    const response = await this.server.get('/itemordershistogram', {
       params: {
         country: this.country,
         language: this.language,
@@ -334,34 +346,44 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async itemOrdersHistogram (
+    appId: number,
+    marketHashName: string,
+    itemNameId: number
+  ): Promise<ItemOrdersHistogram> {
+    const response = await this.itemOrdersHistogramQuery(appId, marketHashName, itemNameId)
+
     return {
-      success: Boolean(response.data.success),
-      sellOrderTable: response.data.sell_order_table,
-      sellOrderSummary: response.data.sell_order_summary,
-      buyOrderTable: response.data.buy_order_table,
-      buyOrderSummary: response.data.buy_order_summary,
-      highestBuyOrder: Number((Number(response.data.highest_buy_order) / this.units).toFixed(this.digits)),
-      lowestSellOrder: Number((Number(response.data.lowest_sell_order) / this.units).toFixed(this.digits)),
-      buyOrderGraph: response.data.buy_order_graph.map((buyOrder) => ({
+      success: Boolean(response.success),
+      sellOrderTable: response.sell_order_table,
+      sellOrderSummary: response.sell_order_summary,
+      buyOrderTable: response.buy_order_table,
+      buyOrderSummary: response.buy_order_summary,
+      highestBuyOrder: Number((Number(response.highest_buy_order) / this.units).toFixed(this.digits)),
+      lowestSellOrder: Number((Number(response.lowest_sell_order) / this.units).toFixed(this.digits)),
+      buyOrderGraph: response.buy_order_graph.map((buyOrder) => ({
         price: buyOrder[0],
         volume: buyOrder[1],
         description: buyOrder[2]
       })),
-      sellOrderGraph: response.data.sell_order_graph.map((sellOrder) => ({
+      sellOrderGraph: response.sell_order_graph.map((sellOrder) => ({
         price: sellOrder[0],
         volume: sellOrder[1],
         description: sellOrder[2]
       })),
-      graphMaxY: response.data.graph_max_y,
-      graphMinX: response.data.graph_min_x,
-      graphMaxX: response.data.graph_max_x,
-      pricePrefix: response.data.price_prefix,
-      priceSuffix: response.data.price_suffix
+      graphMaxY: response.graph_max_y,
+      graphMinX: response.graph_min_x,
+      graphMaxX: response.graph_max_x,
+      pricePrefix: response.price_prefix,
+      priceSuffix: response.price_suffix
     }
   }
 
-  public async priceOverview (appId: number, marketHashName: string): Promise<PriceOverview> {
-    const response = await this.server.get<PriceOverviewResponse>('/priceoverview', {
+  public async priceOverviewQuery (appId: number, marketHashName: string): Promise<PriceOverviewResponse> {
+    const response = await this.server.get('/priceoverview', {
       params: {
         appid: appId,
         currency: this.currency,
@@ -374,16 +396,22 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async priceOverview (appId: number, marketHashName: string): Promise<PriceOverview> {
+    const response = await this.priceOverviewQuery(appId, marketHashName)
+
     return {
-      success: response.data.success,
-      lowestPrice: response.data.lowest_price,
-      volume: Number(response.data.volume.split(',').join('')),
-      medianPrice: response.data.median_price
+      success: response.success,
+      lowestPrice: response.lowest_price,
+      volume: Number(response.volume.split(',').join('')),
+      medianPrice: response.median_price
     }
   }
 
-  public async priceHistory (appId: number, marketHashName: string): Promise<PriceHistory> {
-    const response = await this.server.get<PriceHistoryResponse>('/pricehistory', {
+  public async priceHistoryQuery (appId: number, marketHashName: string): Promise<PriceHistoryResponse> {
+    const response = await this.server.get('/pricehistory', {
       params: {
         appid: appId,
         currency: this.currency,
@@ -397,11 +425,17 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async priceHistory (appId: number, marketHashName: string): Promise<PriceHistory> {
+    const response = await this.priceHistoryQuery(appId, marketHashName)
+
     return {
-      success: response.data.success,
-      pricePrefix: response.data.price_prefix,
-      priceSuffix: response.data.price_suffix,
-      prices: response.data.prices.map((price) => ({
+      success: response.success,
+      pricePrefix: response.price_prefix,
+      priceSuffix: response.price_suffix,
+      prices: response.prices.map((price) => ({
         datetime: price[0],
         price: price[1],
         volume: Number(price[2])
@@ -409,8 +443,8 @@ class SteamMarket {
     }
   }
 
-  public async myListings (start?: number | null, count?: number | null): Promise<MyListings> {
-    const response = await this.server.get<MyListingsResponse>('/mylistings', {
+  public async myListingsQuery (start?: number | null, count?: number | null): Promise<MyListingsResponse> {
+    const response = await this.server.get('/mylistings', {
       params: {
         start: start ?? '0',
         count: count ?? '100',
@@ -423,17 +457,23 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async myListings (start?: number | null, count?: number | null): Promise<MyListings> {
+    const response = await this.myListingsQuery(start, count)
+
     return {
-      success: response.data.success,
-      pageSize: response.data.pagesize,
-      totalCount: response.data.total_count,
-      assets: this.processAssets(response.data.assets),
-      start: response.data.start,
-      numActiveListings: response.data.num_active_listings,
-      listings: response.data.listings.map((listing) => this.processListing(listing)),
-      listingsOnHold: response.data.listings_on_hold.map((listing) => this.processListing(listing)),
-      listingsToConfirm: response.data.listings_to_confirm.map((listing) => this.processListing(listing)),
-      buyOrders: response.data.buy_orders.map((buyOrder) => ({
+      success: response.success,
+      pageSize: response.pagesize,
+      totalCount: response.total_count,
+      assets: this.processAssets(response.assets),
+      start: response.start,
+      numActiveListings: response.num_active_listings,
+      listings: response.listings.map((listing) => this.processListing(listing)),
+      listingsOnHold: response.listings_on_hold.map((listing) => this.processListing(listing)),
+      listingsToConfirm: response.listings_to_confirm.map((listing) => this.processListing(listing)),
+      buyOrders: response.buy_orders.map((buyOrder) => ({
         appId: buyOrder.appid,
         hashName: buyOrder.hash_name,
         walletCurrency: buyOrder.wallet_currency,
@@ -446,8 +486,8 @@ class SteamMarket {
     }
   }
 
-  public async myHistory (start?: number | null, count?: number | null): Promise<MyHistory> {
-    const response = await this.server.get<MyHistoryResponse>('/myhistory', {
+  public async myHistoryQuery (start?: number | null, count?: number | null): Promise<MyHistoryResponse> {
+    const response = await this.server.get('/myhistory', {
       params: {
         start: start ?? '0',
         count: count ?? '100',
@@ -460,13 +500,19 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async myHistory (start?: number | null, count?: number | null): Promise<MyHistory> {
+    const response = await this.myHistoryQuery(start, count)
+
     return {
-      success: response.data.success,
-      pageSize: response.data.pagesize,
-      totalCount: response.data.total_count,
-      start: response.data.start,
-      assets: this.processAssets(response.data.assets),
-      events: response.data.events.map((event) => ({
+      success: response.success,
+      pageSize: response.pagesize,
+      totalCount: response.total_count,
+      start: response.start,
+      assets: this.processAssets(response.assets),
+      events: response.events.map((event) => ({
         listingId: Number(event.listingid),
         purchaseId: Number(event.purchaseid),
         eventType: event.event_type,
@@ -475,7 +521,7 @@ class SteamMarket {
         steamIdActor: Number(event.steamid_actor),
         dateEvent: event.date_event
       })),
-      purchases: Object.values(response.data.purchases).map((purchase) => ({
+      purchases: Object.values(response.purchases).map((purchase) => ({
         listingId: Number(purchase.listingid),
         purchaseId: Number(purchase.purchaseid),
         timeSold: purchase.time_sold,
@@ -499,14 +545,14 @@ class SteamMarket {
         timeFundsHeldUntil: purchase.time_funds_held_until,
         fundsRevoked: purchase.funds_revoked
       })),
-      listings: Object.values(response.data.listings).map((listing) => this.processListing(listing))
+      listings: Object.values(response.listings).map((listing) => this.processListing(listing))
     }
   }
 
-  public async createBuyOrder (appId: number, options: CreateBuyOrderOptions): Promise<CreateBuyOrder> {
+  public async createBuyOrderQuery (appId: number, options: CreateBuyOrderOptions): Promise<CreateBuyOrderResponse> {
     const { marketHashName, price, amount } = options
 
-    const response = await this.server.post<CreateBuyOrderResponse>('/createbuyorder', {
+    const response = await this.server.post('/createbuyorder', {
       sessionid: this.sessionId,
       currency: this.currency,
       appid: appId,
@@ -523,16 +569,22 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async createBuyOrder (appId: number, options: CreateBuyOrderOptions): Promise<CreateBuyOrder> {
+    const response = await this.createBuyOrderQuery(appId, options)
+
     return {
-      success: Boolean(response.data.success),
-      buyOrderId: Number(response.data.buy_orderid)
+      success: Boolean(response.success),
+      buyOrderId: Number(response.buy_orderid)
     }
   }
 
-  public async createSellOrder (appId: number, options: CreateSellOrderOptions): Promise<CreateSellOrder> {
+  public async createSellOrderQuery (appId: number, options: CreateSellOrderOptions): Promise<CreateSellOrderResponse> {
     const { assetId, contextId, price, amount } = options
 
-    const response = await this.server.post<CreateSellOrderResponse>('/sellitem', {
+    const response = await this.server.post('/sellitem', {
       sessionid: this.sessionId,
       appid: appId,
       contextid: contextId,
@@ -547,21 +599,27 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async createSellOrder (appId: number, options: CreateSellOrderOptions): Promise<CreateSellOrder> {
+    const response = await this.createSellOrderQuery(appId, options)
+
     return {
-      success: response.data.success,
-      requiresConfirmation: Boolean(response.data.requires_confirmation),
-      needsMobileConfirmation: response.data.needs_mobile_confirmation,
-      needsEmailConfirmation: response.data.needs_email_confirmation,
-      emailDomain: response.data.email_domain
+      success: response.success,
+      requiresConfirmation: Boolean(response.requires_confirmation),
+      needsMobileConfirmation: response.needs_mobile_confirmation,
+      needsEmailConfirmation: response.needs_email_confirmation,
+      emailDomain: response.email_domain
     }
   }
 
-  public async buyOrderStatus (
+  public async buyOrderStatusQuery (
     appId: number,
     marketHashName: string,
     buyOrderId: number
-  ): Promise<BuyOrderStatus> {
-    const response = await this.server.get<BuyOrderStatusResponse>('/getbuyorderstatus', {
+  ): Promise<BuyOrderStatusResponse> {
+    const response = await this.server.get('/getbuyorderstatus', {
       params: {
         sessionid: this.sessionId,
         buy_orderid: buyOrderId
@@ -572,18 +630,28 @@ class SteamMarket {
       }
     })
 
+    return response.data
+  }
+
+  public async buyOrderStatus (
+    appId: number,
+    marketHashName: string,
+    buyOrderId: number
+  ): Promise<BuyOrderStatus> {
+    const response = await this.buyOrderStatusQuery(appId, marketHashName, buyOrderId)
+
     return {
-      success: Boolean(response.data.success),
-      active: Boolean(response.data.active),
-      purchased: response.data.purchased,
-      quantity: response.data.quantity,
-      quantityRemaining: response.data.quantity_remaining,
-      purchases: response.data.purchases
+      success: Boolean(response.success),
+      active: Boolean(response.active),
+      purchased: response.purchased,
+      quantity: response.quantity,
+      quantityRemaining: response.quantity_remaining,
+      purchases: response.purchases
     }
   }
 
-  public async cancelBuyOrder (buyOrderId: number): Promise<null> {
-    const response = await this.server.post<null>('/cancelbuyorder', {
+  public async cancelBuyOrderQuery (buyOrderId: number): Promise<null> {
+    const response = await this.server.post('/cancelbuyorder', {
       sessionid: this.sessionId,
       buy_orderid: buyOrderId
     }, {
@@ -599,8 +667,12 @@ class SteamMarket {
     return response.data
   }
 
-  public async cancelSellOrder (listingId: number): Promise<[]> {
-    const response = await this.server.post<[]>(`/removelisting/${listingId}`, {
+  public async cancelBuyOrder (buyOrderId: number): Promise<null> {
+    return await this.cancelBuyOrderQuery(buyOrderId)
+  }
+
+  public async cancelSellOrderQuery (listingId: number): Promise<[]> {
+    const response = await this.server.post(`/removelisting/${listingId}`, {
       sessionid: this.sessionId
     }, {
       headers: {
@@ -613,6 +685,10 @@ class SteamMarket {
     })
 
     return response.data
+  }
+
+  public async cancelSellOrder (listingId: number): Promise<[]> {
+    return await this.cancelSellOrderQuery(listingId)
   }
 }
 
