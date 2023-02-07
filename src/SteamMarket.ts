@@ -501,7 +501,7 @@ class SteamMarket {
 
   public async buyOrderStatus (
     appId: number,
-    marketHashName: number,
+    marketHashName: string,
     buyOrderId: number
   ): Promise<BuyOrderStatusResult> {
     const response = await this.server.get<BuyOrderStatusResponse>('/getbuyorderstatus', {
