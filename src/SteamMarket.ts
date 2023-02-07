@@ -13,9 +13,9 @@ import { PriceOverviewResult } from './types/PriceOverviewResult.js'
 import { PriceHistoryResult } from './types/PriceHistoryResult.js'
 import { MyListingsResult } from './types/MyListingsResult.js'
 import { MyHistoryResult } from './types/MyHistoryResult.js'
-import { BuyOrderStatusResult } from './types/BuyOrderStatusResult.js'
 import { CreateBuyOrderResult } from './types/CreateBuyOrderResult.js'
 import { CreateSellOrderResult } from './types/CreateSellOrderResult.js'
+import { BuyOrderStatusResult } from './types/BuyOrderStatusResult.js'
 import { AssetResult } from './types/AssetResult.js'
 import { ListingResult } from './types/ListingResult.js'
 import { SearchResponse } from './types/SearchResponse.js'
@@ -24,9 +24,9 @@ import { PriceOverviewResponse } from './types/PriceOverviewResponse.js'
 import { PriceHistoryResponse } from './types/PriceHistoryResponse.js'
 import { MyListingsResponse } from './types/MyListingsResponse.js'
 import { MyHistoryResponse } from './types/MyHistoryResponse.js'
-import { BuyOrderStatusResponse } from './types/BuyOrderStatusResponse.js'
 import { CreateBuyOrderResponse } from './types/CreateBuyOrderResponse.js'
 import { CreateSellOrderResponse } from './types/CreateSellOrderResponse.js'
+import { BuyOrderStatusResponse } from './types/BuyOrderStatusResponse.js'
 import { AssetResponse } from './types/AssetResponse.js'
 import { ListingResponse } from './types/ListingResponse.js'
 
@@ -503,32 +503,6 @@ class SteamMarket {
     }
   }
 
-  public async buyOrderStatus (
-    appId: number,
-    marketHashName: string,
-    buyOrderId: number
-  ): Promise<BuyOrderStatusResult> {
-    const response = await this.server.get<BuyOrderStatusResponse>('/getbuyorderstatus', {
-      params: {
-        sessionid: this.sessionId,
-        buy_orderid: buyOrderId
-      },
-      headers: {
-        Referer: `https://steamcommunity.com/market/listings/${appId}/${marketHashName}`,
-        'X-Requested-With': 'XMLHttpRequest'
-      }
-    })
-
-    return {
-      success: Boolean(response.data.success),
-      active: Boolean(response.data.active),
-      purchased: response.data.purchased,
-      quantity: response.data.quantity,
-      quantityRemaining: response.data.quantity_remaining,
-      purchases: response.data.purchases
-    }
-  }
-
   public async createBuyOrder (appId: number, options: CreateBuyOrderOptions): Promise<CreateBuyOrderResult> {
     const { marketHashName, price, amount } = options
 
@@ -579,6 +553,32 @@ class SteamMarket {
       needsMobileConfirmation: response.data.needs_mobile_confirmation,
       needsEmailConfirmation: response.data.needs_email_confirmation,
       emailDomain: response.data.email_domain
+    }
+  }
+
+  public async buyOrderStatus (
+    appId: number,
+    marketHashName: string,
+    buyOrderId: number
+  ): Promise<BuyOrderStatusResult> {
+    const response = await this.server.get<BuyOrderStatusResponse>('/getbuyorderstatus', {
+      params: {
+        sessionid: this.sessionId,
+        buy_orderid: buyOrderId
+      },
+      headers: {
+        Referer: `https://steamcommunity.com/market/listings/${appId}/${marketHashName}`,
+        'X-Requested-With': 'XMLHttpRequest'
+      }
+    })
+
+    return {
+      success: Boolean(response.data.success),
+      active: Boolean(response.data.active),
+      purchased: response.data.purchased,
+      quantity: response.data.quantity,
+      quantityRemaining: response.data.quantity_remaining,
+      purchases: response.data.purchases
     }
   }
 
