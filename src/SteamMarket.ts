@@ -1,4 +1,4 @@
-import axios, { Axios } from 'axios'
+import axios from 'axios'
 import proxyParser from 'proxy-string-parser'
 import ISO4217 from 'currency-codes'
 import ISO6391 from 'iso-639-1'
@@ -31,7 +31,7 @@ import { AssetResponse } from './types/AssetResponse.js'
 import { ListingResponse } from './types/ListingResponse.js'
 
 class SteamMarket {
-  private readonly server: Axios
+  private readonly server
   private sessionId = ''
   private currency = ECurrencyCode.USD
   private digits = 2
