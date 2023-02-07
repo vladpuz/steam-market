@@ -1,4 +1,4 @@
-export interface BuyOrderStatusResult {
+export interface BuyOrderStatus {
   success: boolean
   active: boolean
   purchased: number

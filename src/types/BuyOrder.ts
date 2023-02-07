@@ -1,6 +1,6 @@
-import { AssetResult } from './AssetResult.js'
+import { Asset } from './Asset.js'
 
-export interface BuyOrderResult {
+export interface BuyOrder {
   appId: number
   hashName: string
   walletCurrency: number
@@ -8,5 +8,5 @@ export interface BuyOrderResult {
   quantity: number
   quantityRemaining: number
   buyOrderId: number
-  description: AssetResult
+  description: Asset
 }

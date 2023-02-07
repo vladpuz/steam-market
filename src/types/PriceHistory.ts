@@ -1,4 +1,4 @@
-export interface PriceHistoryResult {
+export interface PriceHistory {
   success: boolean
   pricePrefix: string
   priceSuffix: string

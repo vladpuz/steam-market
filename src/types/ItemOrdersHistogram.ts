@@ -1,4 +1,4 @@
-export interface ItemOrdersHistogramResult {
+export interface ItemOrdersHistogram {
   success: boolean
   sellOrderTable: string
   sellOrderSummary: string

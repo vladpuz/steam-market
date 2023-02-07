@@ -1,4 +1,4 @@
-export interface CreateSellOrderResult {
+export interface CreateSellOrder {
   success: boolean
   requiresConfirmation: boolean
   needsMobileConfirmation: boolean

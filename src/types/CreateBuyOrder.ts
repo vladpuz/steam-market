@@ -1,4 +1,4 @@
-export interface CreateBuyOrderResult {
+export interface CreateBuyOrder {
   success: boolean
   buyOrderId: number
 }

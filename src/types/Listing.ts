@@ -1,9 +1,9 @@
-import { AssetResult } from './AssetResult.js'
+import { Asset } from './Asset.js'
 
-export interface ListingResult {
+export interface Listing {
   listingId: number
   timeCreated?: number | null
-  asset: AssetResult
+  asset: Asset
   steamIdLister?: number | null
   price: number
   originalPrice: number

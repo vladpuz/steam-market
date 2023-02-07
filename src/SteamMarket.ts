@@ -7,17 +7,17 @@ import { MarketOptions } from './types/MarketOptions.js'
 import { SearchOptions } from './types/SearchOptions.js'
 import { CreateBuyOrderOptions } from './types/CreateBuyOrderOptions.js'
 import { CreateSellOrderOptions } from './types/CreateSellOrderOptions.js'
-import { SearchResult } from './types/SearchResult.js'
-import { ItemOrdersHistogramResult } from './types/ItemOrdersHistogramResult.js'
-import { PriceOverviewResult } from './types/PriceOverviewResult.js'
-import { PriceHistoryResult } from './types/PriceHistoryResult.js'
-import { MyListingsResult } from './types/MyListingsResult.js'
-import { MyHistoryResult } from './types/MyHistoryResult.js'
-import { CreateBuyOrderResult } from './types/CreateBuyOrderResult.js'
-import { CreateSellOrderResult } from './types/CreateSellOrderResult.js'
-import { BuyOrderStatusResult } from './types/BuyOrderStatusResult.js'
-import { AssetResult } from './types/AssetResult.js'
-import { ListingResult } from './types/ListingResult.js'
+import { Search } from './types/Search.js'
+import { ItemOrdersHistogram } from './types/ItemOrdersHistogram.js'
+import { PriceOverview } from './types/PriceOverview.js'
+import { PriceHistory } from './types/PriceHistory.js'
+import { MyListings } from './types/MyListings.js'
+import { MyHistory } from './types/MyHistory.js'
+import { CreateBuyOrder } from './types/CreateBuyOrder.js'
+import { CreateSellOrder } from './types/CreateSellOrder.js'
+import { BuyOrderStatus } from './types/BuyOrderStatus.js'
+import { Asset } from './types/Asset.js'
+import { Listing } from './types/Listing.js'
 import { SearchResponse } from './types/SearchResponse.js'
 import { ItemOrdersHistogramResponse } from './types/ItemOrdersHistogramResponse.js'
 import { PriceOverviewResponse } from './types/PriceOverviewResponse.js'
@@ -66,7 +66,7 @@ class SteamMarket {
     })
   }
 
-  private processAsset (asset: AssetResponse): AssetResult {
+  private processAsset (asset: AssetResponse): Asset {
     return {
       currency: asset.currency,
       appId: asset.appid,
@@ -110,8 +110,8 @@ class SteamMarket {
     }
   }
 
-  private processAssets (assets: Record<string, Record<string, Record<string, AssetResponse>>>): AssetResult[] {
-    const array: AssetResult[] = []
+  private processAssets (assets: Record<string, Record<string, Record<string, AssetResponse>>>): Asset[] {
+    const array: Asset[] = []
 
     Object.values(assets).forEach((i) => {
       Object.values(i).forEach((j) => {
@@ -124,7 +124,7 @@ class SteamMarket {
     return array
   }
 
-  private processListing (listing: ListingResponse): ListingResult {
+  private processListing (listing: ListingResponse): Listing {
     return {
       listingId: Number(listing.listingid),
       timeCreated: listing.time_created,
@@ -231,7 +231,7 @@ class SteamMarket {
     return this.vanityURL
   }
 
-  public async search (appId: number, options?: SearchOptions | null): Promise<SearchResult> {
+  public async search (appId: number, options?: SearchOptions | null): Promise<Search> {
     const { query, start, count, searchDescriptions, sortColumn, sortDir } = options ?? {}
 
     const response = await this.server.get<SearchResponse>('/search/render', {
@@ -318,7 +318,7 @@ class SteamMarket {
     appId: number,
     marketHashName: string,
     itemNameId: number
-  ): Promise<ItemOrdersHistogramResult> {
+  ): Promise<ItemOrdersHistogram> {
     const response = await this.server.get<ItemOrdersHistogramResponse>('/itemordershistogram', {
       params: {
         country: this.country,
@@ -360,7 +360,7 @@ class SteamMarket {
     }
   }
 
-  public async priceOverview (appId: number, marketHashName: string): Promise<PriceOverviewResult> {
+  public async priceOverview (appId: number, marketHashName: string): Promise<PriceOverview> {
     const response = await this.server.get<PriceOverviewResponse>('/priceoverview', {
       params: {
         appid: appId,
@@ -382,7 +382,7 @@ class SteamMarket {
     }
   }
 
-  public async priceHistory (appId: number, marketHashName: string): Promise<PriceHistoryResult> {
+  public async priceHistory (appId: number, marketHashName: string): Promise<PriceHistory> {
     const response = await this.server.get<PriceHistoryResponse>('/pricehistory', {
       params: {
         appid: appId,
@@ -409,7 +409,7 @@ class SteamMarket {
     }
   }
 
-  public async myListings (start?: number | null, count?: number | null): Promise<MyListingsResult> {
+  public async myListings (start?: number | null, count?: number | null): Promise<MyListings> {
     const response = await this.server.get<MyListingsResponse>('/mylistings', {
       params: {
         start: start ?? '0',
@@ -446,7 +446,7 @@ class SteamMarket {
     }
   }
 
-  public async myHistory (start?: number | null, count?: number | null): Promise<MyHistoryResult> {
+  public async myHistory (start?: number | null, count?: number | null): Promise<MyHistory> {
     const response = await this.server.get<MyHistoryResponse>('/myhistory', {
       params: {
         start: start ?? '0',
@@ -503,7 +503,7 @@ class SteamMarket {
     }
   }
 
-  public async createBuyOrder (appId: number, options: CreateBuyOrderOptions): Promise<CreateBuyOrderResult> {
+  public async createBuyOrder (appId: number, options: CreateBuyOrderOptions): Promise<CreateBuyOrder> {
     const { marketHashName, price, amount } = options
 
     const response = await this.server.post<CreateBuyOrderResponse>('/createbuyorder', {
@@ -529,7 +529,7 @@ class SteamMarket {
     }
   }
 
-  public async createSellOrder (appId: number, options: CreateSellOrderOptions): Promise<CreateSellOrderResult> {
+  public async createSellOrder (appId: number, options: CreateSellOrderOptions): Promise<CreateSellOrder> {
     const { assetId, contextId, price, amount } = options
 
     const response = await this.server.post<CreateSellOrderResponse>('/sellitem', {
@@ -560,7 +560,7 @@ class SteamMarket {
     appId: number,
     marketHashName: string,
     buyOrderId: number
-  ): Promise<BuyOrderStatusResult> {
+  ): Promise<BuyOrderStatus> {
     const response = await this.server.get<BuyOrderStatusResponse>('/getbuyorderstatus', {
       params: {
         sessionid: this.sessionId,

@@ -1,4 +1,4 @@
-export interface SearchResult {
+export interface Search {
   success: boolean
   start: number
   pageSize: number

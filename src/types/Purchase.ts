@@ -1,13 +1,13 @@
-import { AssetResult } from './AssetResult.js'
+import { Asset } from './Asset.js'
 
-export interface PurchaseResult {
+export interface Purchase {
   listingId: number
   purchaseId: number
   timeSold: number
   steamIdPurchaser: number
   needsRollback: number
   failed: number
-  asset: AssetResult
+  asset: Asset
   paidAmount: number
   paidFee: number
   currencyId: number

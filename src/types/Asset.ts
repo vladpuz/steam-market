@@ -1,7 +1,7 @@
 import { Description } from './Description.js'
 import { Action } from './Action.js'
 
-export interface AssetResult {
+export interface Asset {
   currency?: number | null
   appId: number
   contextId?: number | null

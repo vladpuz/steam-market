@@ -1,4 +1,4 @@
-export interface EventResult {
+export interface Event {
   listingId: number
   purchaseId?: number | null
   eventType: number
