@@ -58,11 +58,7 @@ class SteamMarket {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
         ...additionalHeaders
       },
-      proxy: (proxy != null) ? proxyParser(proxy) : false,
-      validateStatus: (status) => {
-        if (status === 304) return true
-        return status >= 200 && status < 300
-      }
+      proxy: (proxy != null) ? proxyParser(proxy) : false
     })
   }
 
@@ -341,7 +337,7 @@ class SteamMarket {
       },
       headers: {
         Referer: `https://steamcommunity.com/market/listings/${appId}/${marketHashName}`,
-        'If-Modified-Since': new Date().toUTCString(),
+        'If-Modified-Since': new Date(Date.now() - 5000).toUTCString(),
         'X-Requested-With': 'XMLHttpRequest'
       }
     })
@@ -419,7 +415,7 @@ class SteamMarket {
       },
       headers: {
         Referer: `https://steamcommunity.com/id/${this.vanityURL}/inventory?modal=1&market=1`,
-        'If-Modified-Since': new Date().toUTCString(),
+        'If-Modified-Since': new Date(Date.now() - 5000).toUTCString(),
         'X-Prototype-Version': '1.7',
         'X-Requested-With': 'XMLHttpRequest'
       }
