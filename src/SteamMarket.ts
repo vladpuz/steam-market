@@ -337,7 +337,6 @@ class SteamMarket {
       },
       headers: {
         Referer: `https://steamcommunity.com/market/listings/${appId}/${marketHashName}`,
-        'If-Modified-Since': new Date(Date.now() - 5000).toUTCString(),
         'X-Requested-With': 'XMLHttpRequest'
       }
     })
@@ -415,7 +414,6 @@ class SteamMarket {
       },
       headers: {
         Referer: `https://steamcommunity.com/id/${this.vanityURL}/inventory?modal=1&market=1`,
-        'If-Modified-Since': new Date(Date.now() - 5000).toUTCString(),
         'X-Prototype-Version': '1.7',
         'X-Requested-With': 'XMLHttpRequest'
       }
