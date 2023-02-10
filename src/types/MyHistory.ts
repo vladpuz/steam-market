@@ -1,7 +1,7 @@
-import { Asset } from './Asset.js'
-import { Listing } from './Listing.js'
-import { Event } from './Event.js'
-import { Purchase } from './Purchase.js'
+import { type Asset } from './Asset.js'
+import { type Listing } from './Listing.js'
+import { type Event } from './Event.js'
+import { type Purchase } from './Purchase.js'
 
 export interface MyHistory {
   success: boolean

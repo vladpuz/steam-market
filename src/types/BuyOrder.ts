@@ -1,4 +1,4 @@
-import { Asset } from './Asset.js'
+import { type Asset } from './Asset.js'
 
 export interface BuyOrder {
   appId: number
