@@ -1,4 +1,7 @@
+import { type SearchResponse } from './SearchResponse.js'
+
 export interface Search {
+  _data: SearchResponse
   success: boolean
   start: number
   pageSize: number

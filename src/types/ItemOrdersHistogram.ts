@@ -1,4 +1,7 @@
+import { type ItemOrdersHistogramResponse } from './ItemOrdersHistogramResponse.js'
+
 export interface ItemOrdersHistogram {
+  _data: ItemOrdersHistogramResponse
   success: boolean
   sellOrderTable: string
   sellOrderSummary: string
