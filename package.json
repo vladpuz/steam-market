@@ -1,6 +1,6 @@
 {
   "name": "steam-market",
-  "version": "3.0.0-beta.3",
+  "version": "3.0.0-beta.4",
   "description": "Steam community market API client",
   "keywords": [
     "steam",
