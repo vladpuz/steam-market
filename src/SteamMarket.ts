@@ -8,7 +8,7 @@ import { type SearchOptions } from './types/SearchOptions.js'
 import { type CreateBuyOrderOptions } from './types/CreateBuyOrderOptions.js'
 import { type CreateSellOrderOptions } from './types/CreateSellOrderOptions.js'
 import { type Search } from './types/Search.js'
-import { type ItemNameId } from './types/ItemNameId.js'
+import { type Listings } from './types/Listings.js'
 import { type ItemOrdersHistogram } from './types/ItemOrdersHistogram.js'
 import { type PriceOverview } from './types/PriceOverview.js'
 import { type PriceHistory } from './types/PriceHistory.js'
@@ -18,7 +18,7 @@ import { type CreateBuyOrder } from './types/CreateBuyOrder.js'
 import { type CreateSellOrder } from './types/CreateSellOrder.js'
 import { type BuyOrderStatus } from './types/BuyOrderStatus.js'
 import { type SearchResponse } from './types/SearchResponse.js'
-import { type ItemNameIdResponse } from './types/ItemNameIdResponse.js'
+import { type ListingsResponse } from './types/ListingsResponse.js'
 import { type ItemOrdersHistogramResponse } from './types/ItemOrdersHistogramResponse.js'
 import { type PriceOverviewResponse } from './types/PriceOverviewResponse.js'
 import { type PriceHistoryResponse } from './types/PriceHistoryResponse.js'
@@ -31,6 +31,7 @@ import { type Asset } from './types/Asset.js'
 import { type Listing } from './types/Listing.js'
 import { type AssetResponse } from './types/AssetResponse.js'
 import { type ListingResponse } from './types/ListingResponse.js'
+import { type PriceResponse } from './types/PriceResponse.js'
 
 class SteamMarket {
   private readonly server
@@ -292,28 +293,80 @@ class SteamMarket {
     }
   }
 
-  public async itemNameId (appId: number, marketHashName: string): Promise<ItemNameId> {
-    const response = await this.server.get<ItemNameIdResponse>(`/listings/${appId}/${marketHashName}`, {
+  public async listings (appId: number, marketHashName: string): Promise<Listings> {
+    const response = await this.server.get<ListingsResponse>(`/listings/${appId}/${marketHashName}`, {
       headers: {
         Cookie: this.getCookies().filter((cookie) => cookie.split('=')[0] === 'steamLogin').join('; '),
         Referer: `https://steamcommunity.com/market/search?appid=${appId}`
       }
     })
 
-    const startString = 'Market_LoadOrderSpread('
-    const endString = ')'
-    const startPosition = response.data.indexOf(startString, 0)
-    const endPosition = response.data.indexOf(endString, startPosition)
-
-    if (startPosition === -1 || endPosition === -1) {
-      throw new Error('Value itemNameId not found')
-    }
-
-    const itemNameId = response.data.slice(startPosition + startString.length, endPosition).trim()
-
     return {
       _data: response.data,
-      value: Number(itemNameId)
+      async itemNameId (): Promise<number> {
+        const self = await this
+
+        const startString = 'Market_LoadOrderSpread('
+        const endString = ')'
+        const startPosition = self._data.indexOf(startString, 0)
+        const endPosition = self._data.indexOf(endString, startPosition)
+
+        if (startPosition === -1 || endPosition === -1) {
+          throw new Error('Value itemNameId not found')
+        }
+
+        const itemNameId = self._data.slice(startPosition + startString.length, endPosition).trim()
+        return Number(itemNameId)
+      },
+      async priceHistory (): Promise<PriceHistory<string>> {
+        const self = await this
+
+        const startString = 'line1='
+        const endString = ';'
+        const startPosition = self._data.indexOf(startString, 0)
+        const endPosition = self._data.indexOf(endString, startPosition)
+
+        if (startPosition === -1 || endPosition === -1) {
+          throw new Error('Value prices not found')
+        }
+
+        const slice = self._data.slice(startPosition + startString.length, endPosition).trim()
+        const json: PriceResponse[] = JSON.parse(slice)
+        const prices = json.map((price) => ({
+          datetime: price[0],
+          price: price[1],
+          volume: Number(price[2])
+        }))
+
+        const prefixStartString = 'strFormatPrefix = "'
+        const prefixEndString = '";'
+        const prefixStartPosition = self._data.indexOf(prefixStartString, 0)
+        const prefixEndPosition = self._data.indexOf(prefixEndString, prefixStartPosition)
+
+        const suffixStartString = 'strFormatSuffix = "'
+        const suffixEndString = '";'
+        const suffixStartPosition = self._data.indexOf(suffixStartString, 0)
+        const suffixEndPosition = self._data.indexOf(suffixEndString, suffixStartPosition)
+
+        if (prefixStartPosition === -1 || prefixEndPosition === -1) {
+          throw new Error('Value pricePrefix not found')
+        }
+
+        if (suffixStartPosition === -1 || suffixEndPosition === -1) {
+          throw new Error('Value priceSuffix not found')
+        }
+
+        const pricePrefix = self._data.slice(prefixStartPosition + prefixStartString.length, prefixEndPosition).trim()
+        const priceSuffix = self._data.slice(suffixStartPosition + suffixStartString.length, suffixEndPosition).trim()
+
+        return {
+          _data: self._data,
+          success: true,
+          pricePrefix,
+          priceSuffix,
+          prices
+        }
+      }
     }
   }
 
