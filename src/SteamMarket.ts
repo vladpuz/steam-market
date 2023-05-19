@@ -384,7 +384,7 @@ class SteamMarket {
         two_factor: '0'
       },
       headers: {
-        Referer: `https://steamcommunity.com/market/listings/${appId}/${marketHashName}`,
+        Referer: `https://steamcommunity.com/market/listings/${appId}/${encodeURIComponent(marketHashName)}`,
         'X-Requested-With': 'XMLHttpRequest'
       }
     })
@@ -576,7 +576,7 @@ class SteamMarket {
       save_my_address: '0'
     }, {
       headers: {
-        Referer: `https://steamcommunity.com/market/listings/${appId}/${marketHashName}`,
+        Referer: `https://steamcommunity.com/market/listings/${appId}/${encodeURIComponent(marketHashName)}`,
         Origin: 'https://steamcommunity.com',
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       }
@@ -628,7 +628,7 @@ class SteamMarket {
         buy_orderid: buyOrderId
       },
       headers: {
-        Referer: `https://steamcommunity.com/market/listings/${appId}/${marketHashName}`,
+        Referer: `https://steamcommunity.com/market/listings/${appId}/${encodeURIComponent(marketHashName)}`,
         'X-Requested-With': 'XMLHttpRequest'
       }
     })
