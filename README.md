@@ -17,30 +17,14 @@ TypeDoc documentation is available on [wiki](https://github.com/vladislav-puzyre
 
 ### Without log in
 
-Using npm:
-
 ```bash
 npm install steam-market
 ```
 
-Using yarn:
-
-```bash
-yarn add steam-market
-```
-
 ### With log in
-
-Using npm:
 
 ```bash
 npm install steam-totp steam-user steam-market
-```
-
-Using yarn:
-
-```bash
-yarn add steam-totp steam-user steam-market
 ```
 
 ## Usage
@@ -169,4 +153,4 @@ console.log('cancelSellOrder', cancelSellOrder)
 | [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interact with various interfaces on Steam Community from Node.js        | DoctorMcKay       |
 | [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Simple and sane Steam trade offer management                            | DoctorMcKay       |
 | [steam-market](https://github.com/vladislav-puzyrev/steam-market) (YOU HERE)             | Steam market API client                                                 | Vladislav Puzyrev |
-| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot)                          | Creating Steam bots based on middlewares                                | Vladislav Puzyrev |
+| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot)                          | Steam bots creating based on middlewares                                | Vladislav Puzyrev |

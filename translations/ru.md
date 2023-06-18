@@ -19,30 +19,14 @@ TypeDoc документация доступна на [wiki](https://github.com
 
 ### Без входа
 
-Используя npm:
-
 ```bash
 npm install steam-market
 ```
 
-Используя yarn:
-
-```bash
-yarn add steam-market
-```
-
 ### Со входом
-
-Используя npm:
 
 ```bash
 npm install steam-totp steam-user steam-market
-```
-
-Используя yarn:
-
-```bash
-yarn add steam-totp steam-user steam-market
 ```
 
 ## Использование
