@@ -348,12 +348,11 @@ class SteamMarket {
         const suffixStartPosition = self._data.indexOf(suffixStartString, 0)
         const suffixEndPosition = self._data.indexOf(suffixEndString, suffixStartPosition)
 
-        if (prefixStartPosition === -1 || prefixEndPosition === -1) {
+        if (
+          (prefixStartPosition === -1 || prefixEndPosition === -1) ||
+          (suffixStartPosition === -1 || suffixEndPosition === -1)
+        ) {
           throw new Error('Value pricePrefix not found')
-        }
-
-        if (suffixStartPosition === -1 || suffixEndPosition === -1) {
-          throw new Error('Value priceSuffix not found')
         }
 
         const pricePrefix = self._data.slice(prefixStartPosition + prefixStartString.length, prefixEndPosition).trim()
