@@ -1,3 +1,7 @@
+## Version 3.0.4
+
+- Fix for undefined response values (#8)
+
 ## Version 3.0.3
 
 - Fix number truncating for listing id (#7)

@@ -44,7 +44,7 @@ class SteamMarket {
   private language = 'english'
   private vanityURL = ''
 
-  public constructor(options?: MarketOptions | null) {
+  constructor(options?: MarketOptions | null) {
     const { additionalHeaders, httpProxy, socksProxy } = options ?? {}
     const proxy = httpProxy ?? socksProxy
 
@@ -179,7 +179,7 @@ class SteamMarket {
     }
   }
 
-  public setCookies(cookies: string[]): void {
+  setCookies(cookies: string[]): void {
     const sessionId = cookies.find((cookie) => {
       return cookie.split('=')[0] === 'sessionid'
     })
@@ -192,7 +192,7 @@ class SteamMarket {
     this.server.defaults.headers.common['Cookie'] = cookies.join('; ')
   }
 
-  public setCurrency(currency: ECurrencyCode): void {
+  setCurrency(currency: ECurrencyCode): void {
     const info = ISO4217.code(ECurrencyCode[currency])
 
     if (info == null) {
@@ -204,7 +204,7 @@ class SteamMarket {
     this.currency = currency
   }
 
-  public setCountry(country: string): void {
+  setCountry(country: string): void {
     const language = ISO6391.getName(country.toLowerCase())
 
     if (language === '') {
@@ -215,44 +215,44 @@ class SteamMarket {
     this.country = country
   }
 
-  public setVanityURL(vanityURL: string): void {
+  setVanityURL(vanityURL: string): void {
     this.vanityURL = vanityURL
   }
 
-  public getCookies(): string[] {
+  getCookies(): string[] {
     // eslint-disable-next-line @typescript-eslint/no-base-to-string
     return this.server.defaults.headers.common['Cookie']?.toString().split('; ') ?? []
   }
 
-  public getSessionId(): string {
+  getSessionId(): string {
     return this.sessionId
   }
 
-  public getCurrency(): ECurrencyCode {
+  getCurrency(): ECurrencyCode {
     return this.currency
   }
 
-  public getDigits(): number {
+  getDigits(): number {
     return this.digits
   }
 
-  public getUnits(): number {
+  getUnits(): number {
     return this.units
   }
 
-  public getCountry(): string {
+  getCountry(): string {
     return this.country
   }
 
-  public getLanguage(): string {
+  getLanguage(): string {
     return this.language
   }
 
-  public getVanityURL(): string {
+  getVanityURL(): string {
     return this.vanityURL
   }
 
-  public async search(
+  async search(
     appId: number,
     options?: SearchOptions | null,
   ): Promise<Search> {
@@ -326,7 +326,7 @@ class SteamMarket {
     }
   }
 
-  public async listings(
+  async listings(
     appId: number,
     marketHashName: string,
   ): Promise<Listings> {
@@ -427,7 +427,7 @@ class SteamMarket {
     }
   }
 
-  public async itemOrdersHistogram(
+  async itemOrdersHistogram(
     appId: number,
     marketHashName: string,
     itemNameId: number,
@@ -481,7 +481,7 @@ class SteamMarket {
     }
   }
 
-  public async priceOverview(
+  async priceOverview(
     appId: number,
     marketHashName: string,
   ): Promise<PriceOverview> {
@@ -507,7 +507,7 @@ class SteamMarket {
     }
   }
 
-  public async priceHistory(
+  async priceHistory(
     appId: number,
     marketHashName: string,
   ): Promise<PriceHistory> {
@@ -539,7 +539,7 @@ class SteamMarket {
     }
   }
 
-  public async myListings(
+  async myListings(
     start?: number | null,
     count?: number | null,
   ): Promise<MyListings> {
@@ -588,7 +588,7 @@ class SteamMarket {
     }
   }
 
-  public async myHistory(
+  async myHistory(
     start?: number | null,
     count?: number | null,
   ): Promise<MyHistory> {
@@ -655,7 +655,7 @@ class SteamMarket {
     }
   }
 
-  public async createBuyOrder(
+  async createBuyOrder(
     appId: number,
     options: CreateBuyOrderOptions,
   ): Promise<CreateBuyOrder> {
@@ -685,7 +685,7 @@ class SteamMarket {
     }
   }
 
-  public async createSellOrder(
+  async createSellOrder(
     appId: number,
     options: CreateSellOrderOptions,
   ): Promise<CreateSellOrder> {
@@ -716,7 +716,7 @@ class SteamMarket {
     }
   }
 
-  public async buyOrderStatus(
+  async buyOrderStatus(
     appId: number,
     marketHashName: string,
     buyOrderId: number,
@@ -743,7 +743,7 @@ class SteamMarket {
     }
   }
 
-  public async cancelBuyOrder(buyOrderId: number): Promise<null> {
+  async cancelBuyOrder(buyOrderId: number): Promise<null> {
     const response = await this.server.post<null>('/cancelbuyorder', {
       sessionid: this.sessionId,
       buy_orderid: buyOrderId,
@@ -760,7 +760,7 @@ class SteamMarket {
     return response.data
   }
 
-  public async cancelSellOrder(listingId: string): Promise<[]> {
+  async cancelSellOrder(listingId: string): Promise<[]> {
     const response = await this.server.post<[]>(`/removelisting/${listingId}`, {
       sessionid: this.sessionId,
     }, {

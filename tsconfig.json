@@ -1,4 +1,10 @@
 {
-  "extends": "./tsconfig.base.json",
-  "exclude": ["build"]
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json",
+    "@tsconfig/node-lts/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": false,
+    "noUncheckedIndexedAccess": false
+  }
 }

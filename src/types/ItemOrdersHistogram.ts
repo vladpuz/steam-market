@@ -9,16 +9,16 @@ export interface ItemOrdersHistogram {
   buyOrderSummary: string
   highestBuyOrder: number
   lowestSellOrder: number
-  buyOrderGraph: {
+  buyOrderGraph: Array<{
     price: number
     volume: number
     description: string
-  }[]
-  sellOrderGraph: {
+  }>
+  sellOrderGraph: Array<{
     price: number
     volume: number
     description: string
-  }[]
+  }>
   graphMaxY: number
   graphMinX: number
   graphMaxX: number

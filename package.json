@@ -1,16 +1,7 @@
 {
   "name": "steam-market",
-  "version": "3.0.3",
-  "type": "module",
+  "version": "3.0.4",
   "description": "Steam market API client",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vladislav-puzyrev/steam-market.git"
-  },
-  "author": "Vladislav Puzyrev",
-  "license": "MIT",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
   "keywords": [
     "steam",
     "market",
@@ -18,6 +9,15 @@
     "client",
     "sdk"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladislav-puzyrev/steam-market.git"
+  },
+  "license": "MIT",
+  "author": "Vladislav Puzyrev",
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "check": "npm run typecheck && npm run lint && npm run format",
@@ -29,20 +29,20 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "axios": "^1.11.0",
+    "axios": "^1.13.5",
     "currency-codes": "^2.2.0",
     "iso-639-1": "^3.1.5"
   },
   "devDependencies": {
-    "@tsconfig/node-lts": "^22.0.2",
-    "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^24.1.0",
-    "eslint": "^9.31.0",
-    "eslint-config-vladpuz": "^2.0.3",
+    "@tsconfig/node-lts": "^24.0.0",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^25.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-vladpuz": "^2.5.1",
     "husky": "^9.1.7",
-    "prettier": "^3.6.2",
-    "prettier-config-vladpuz": "^1.0.2",
-    "rimraf": "^6.0.1",
-    "typescript": "^5.8.3"
+    "prettier": "^3.8.1",
+    "prettier-config-vladpuz": "^2.0.0",
+    "rimraf": "^6.1.2",
+    "typescript": "^5.9.3"
   }
 }

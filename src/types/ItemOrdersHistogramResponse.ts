@@ -6,8 +6,8 @@ export interface ItemOrdersHistogramResponse {
   buy_order_summary: string
   highest_buy_order: string
   lowest_sell_order: string
-  buy_order_graph: [number, number, string][]
-  sell_order_graph: [number, number, string][]
+  buy_order_graph: Array<[number, number, string]>
+  sell_order_graph: Array<[number, number, string]>
   graph_max_y: number
   graph_min_x: number
   graph_max_x: number
