@@ -4,6 +4,6 @@ export interface PriceOverview {
   _data: PriceOverviewResponse
   success: boolean
   lowestPrice: string
-  volume: number
-  medianPrice: string
+  volume?: number
+  medianPrice?: string
 }

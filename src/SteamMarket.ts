@@ -502,7 +502,7 @@ class SteamMarket {
       _data: response.data,
       success: response.data.success,
       lowestPrice: response.data.lowest_price,
-      volume: Number(response.data.volume.split(',').join('')),
+      volume: response.data.volume === undefined ? response.data.volume : Number(response.data.volume.split(',').join('')),
       medianPrice: response.data.median_price,
     }
   }
